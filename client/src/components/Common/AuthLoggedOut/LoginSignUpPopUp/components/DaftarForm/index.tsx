@@ -116,7 +116,9 @@ const DaftarForm = ({ setDaftar }: any) => {
   };
   return (
     <div className="m-0 flex flex-col items-center">
-      <h3 className="m-0 mb-[40px] font-[36px] underline">Daftar ke website</h3>
+      <h3 className="m-0 mb-[20px] text-[36px] font-[800] underline">
+        Daftar ke website
+      </h3>
       <div className="flex w-[350px] translate-x-[20px] m-[5px]">
         <div className="w-[300px] flex items-center rounded-[20px] h-[40px] bg-primary1">
           <AiOutlineUser className="text-white ml-[15px]" size={25} />
@@ -127,14 +129,14 @@ const DaftarForm = ({ setDaftar }: any) => {
             placeholder="Username"
             value={daftarValue.user_name}
             autoComplete="off"
-            className="bg-transparent w-[80%] border-none px-[20px] text-16px font-[600] focus:outline-none placeholder:text-[rgba(255, 255, 255, 0.5)]"
+            className="bg-transparent w-[80%] text-white border-none px-[20px] text-16px font-[600] focus:outline-none placeholder:text-[rgba(255, 255, 255, 0.5)]"
           />
         </div>
         <ErrDesc errorValue={UserErr()} errState={errUserMsg} />
       </div>
-      <div className="daftar-input">
-        <div className="input">
-          <AiOutlineMail className="icon" size={25} />
+      <div className="flex w-[350px] translate-x-[20px] m-[5px]">
+        <div className="w-[300px] flex items-center rounded-[20px] h-[40px] bg-primary1">
+          <AiOutlineMail className="text-white ml-[15px]" size={25} />
           <input
             type="email"
             name="email"
@@ -142,50 +144,62 @@ const DaftarForm = ({ setDaftar }: any) => {
             placeholder="E-mail"
             value={daftarValue.email}
             autoComplete="off"
+            className="bg-transparent w-[80%] text-white border-none px-[20px] text-16px font-[600] focus:outline-none placeholder:text-[rgb(255,255,255)/0.5]"
           />
         </div>
         <ErrDesc errorValue={EmailErr()} errState={errEmailMsg} />
       </div>
-      <div className="daftar-input">
-        <div className="input">
-          <BsKey className="icon" size={25} />
+      <div className="flex w-[350px] translate-x-[20px] m-[5px]">
+        <div className="w-[300px] flex items-center rounded-[20px] h-[40px] bg-primary1">
+          <BsKey className="text-white ml-[15px]" size={25} />
           <input
             type="password"
             name="password"
             onChange={handleDaftarOnChange}
             placeholder="Password"
             value={daftarValue.password}
+            className="bg-transparent w-[80%] text-white border-none px-[20px] text-16px font-[600] focus:outline-none placeholder:text-[rgb(255,255,255)/0.5]"
           />
         </div>
       </div>
 
-      <div className="daftar-input">
-        <div className="input">
-          <BsKey className="icon" size={25} />
+      <div className="flex w-[350px] translate-x-[20px] m-[5px]">
+        <div className="w-[300px] flex items-center rounded-[20px] h-[40px] bg-primary1">
+          <BsKey className="text-white ml-[15px]" size={25} />
           <input
             type="password"
             name="repassword"
             onChange={handleDaftarOnChange}
             placeholder="Re-enter Password"
             value={daftarValue.repassword}
+            className="bg-transparent w-[80%] text-white border-none px-[20px] text-16px font-[600] focus:outline-none placeholder:text-[rgb(255,255,255)/0.5]"
           />
         </div>
         <ErrDesc errorValue={PassErr()} errState={errPassMsg} />
       </div>
-      <div className="confirm" onClick={daftarFormDiscipline}>
-        <h3>Daftar</h3>
+      <div
+        className="flex justify-center items-center bg-[gray] w-[200px] text-center  rounded-[50px] mt-[10px] hover:cursor-pointer"
+        onClick={daftarFormDiscipline}
+      >
+        <h3 className="text-white mx-[30px] my-[5px]">Daftar</h3>
       </div>
-      <h4>---atau---</h4>
+      <h4 className="my-[10px] mx-0">---atau---</h4>
       <h4>Daftar Menggunakan Pihak Ketiga:</h4>
-      <div className="third-party-login">
-        <div className="third-party-login-list">
-          <GrGoogle className="google-icon" size={25} />
-          <BsFacebook className="facebook-icon" size={25} />
-          <BsApple className="apple-icon" size={25} />
+      <div className="flex flex-row items-center justify-around w-[80px] h-[50px] m-[5px] rounded-[30px]">
+        <div className="flex flex-row gap-[20px]">
+          <div className="py-[10px] px-[40px] bg-[#de5246] rounded-[50px] hover:cursor-pointer">
+            <GrGoogle className="text-white" size={25} />
+          </div>
+          <div className="py-[10px] px-[40px] bg-[#4267b2] rounded-[50px] hover:cursor-pointer">
+            <BsFacebook className="text-white" size={25} />
+          </div>
+          <div className="py-[10px] px-[40px] bg-[#161618] rounded-[50px] hover:cursor-pointer">
+            <BsApple className="text-white" size={25} />
+          </div>
         </div>
       </div>
-      <div className="disclaimer">
-        <h5>
+      <div className="w-[80%] m-0">
+        <h5 className="m-[5px] text-[14px]">
           <input type="checkbox" />
           Saya telah setuju dengan <a href="persyaratan">
             Persyaratan Layanan
@@ -193,16 +207,27 @@ const DaftarForm = ({ setDaftar }: any) => {
           dan <a href="kebijakan">Kebijakan Privasi</a> termasuk pengumpulan,
           penggunaan, dan pengungkapan informasi pribadi saya.
         </h5>
-        <h5>
+        <h5 className="m-[5px] text-[14px]">
           <input type="checkbox" />
           Kirimkan saya berita listing rumah, data properti, dan penawaran baru.
         </h5>
       </div>
-      <div className="divider" />
-      <div className="register">
-        <h5>
+      <div className="outline outline-[gray] outline-[1px] w-[90%] mx-0 my-[10px]" />
+      <div className="flex flex-col justify-center items-center">
+        <h5 className="m-[3px]">
           Sudah punya akun?{" "}
-          <span onClick={() => setDaftar(true)}>Log In Sekarang</span>
+          <span
+            className="text-[14px] underline text-primary5 hover:text-primary1 hover:cursor-pointer"
+            onClick={() => setDaftar(true)}
+          >
+            Log In Sekarang
+          </span>
+        </h5>
+        <h5 className="m-[3px]">
+          Ingin daftar sebagai agen properti?{" "}
+          <span className="text-[14px] underline text-primary5 hover:text-primary1 hover:cursor-pointer">
+            Daftar Sebagai Agen
+          </span>
         </h5>
       </div>
     </div>

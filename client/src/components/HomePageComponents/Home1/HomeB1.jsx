@@ -3,13 +3,13 @@ import React, { useState } from "react";
 // import SearchTabs from "../../Common/HomeSearchTab";
 // import SearchTabs from "../../Common/HomeSearchTab/indexTest";
 import NavBar from "../../Common/NavBar/NavBar";
-// import LoginDaftarPopUp from "../../Common/AuthLoggedOut/LoginSignUpPopUp";
+import LoginDaftarPopUp from "../../Common/AuthLoggedOut/LoginSignUpPopUp";
 import MovingBackground from "../../Common/MovingBackground";
 import AuthLoggedOut from "../../Common/AuthLoggedOut";
 // import PhoneLogo from "../assets/images/phone_icon.png";
 
 export default function HomeB1() {
-  const [trigger, setTrigger] = useState<boolean>(false);
+  const [trigger, setTrigger] = useState(false);
   return (
     <section className="flex flex-col bg-transparent h-[600px] ">
       <div className="absolute w-full h-[600px] -z-1 ">
@@ -21,7 +21,7 @@ export default function HomeB1() {
           <NavBar />
           <AuthLoggedOut />
         </div>
-        {/* <LoginDaftarPopUp trigger={trigger} setTrigger={setTrigger} /> */}
+        <LoginDaftarPopUp trigger={trigger} setTrigger={setTrigger} />
       </div>
       <div className="flex flex-row justify-between relative">
         <div className="w-[50%]">

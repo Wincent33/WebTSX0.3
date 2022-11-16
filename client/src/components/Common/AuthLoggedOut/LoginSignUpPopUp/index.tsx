@@ -6,10 +6,10 @@ import DaftarForm from "./components/DaftarForm";
 function LoginDaftarPopUp(props: any) {
   if (props.trigger) {
     return (
-      <div className="fixed top-0 left-0 w-full h-full bg-[rgba(0, 0, 0, 0.5)] flex justify-center items-center z-50 text-black">
-        <div className="login-logout-inner">
+      <div className="fixed top-0 left-0 w-full h-full bg-[black]/50 flex justify-center items-center z-50 text-black">
+        <div className=" relative bg-white p-[32px] max-w-[550px] max-h-[700px]  overflow-x-hidden overflow-y-hidden rounded-[50px]">
           <button
-            className="close-btn"
+            className="absolute top-[16px] right-[16px]"
             onClick={() => {
               props.setTrigger(false);
             }}

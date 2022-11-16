@@ -5,7 +5,7 @@ import { AiOutlineMail, AiFillWarning } from "react-icons/ai";
 // import "./style.scss";
 import ReactTooltip from "react-tooltip";
 import validateEmail from "../../utils/validateEmail";
-import { valueContainerCSS } from "react-select/dist/declarations/src/components/containers";
+// import { valueContainerCSS } from "react-select/dist/declarations/src/components/containers";
 
 const LoginForm = ({ setDaftar }: any) => {
   const [loginValue, setLoginValue] = useState({
@@ -36,14 +36,14 @@ const LoginForm = ({ setDaftar }: any) => {
   const ErrDesc = ({ errorValue, errState }: any) => {
     if (errState === true) {
       return (
-        <div className="err-popup">
+        <div className="flex">
           <AiFillWarning
             data-tip={errorValue}
             data-for="error"
-            className="warning-icon"
+            className="static right-0 text-primary4 h-[40px] w-[40px]"
           />
           <ReactTooltip
-            className="err-tooltip"
+            className="min-w-max flex justify-center text-center"
             id="error"
             type="error"
             effect="solid"
@@ -83,11 +83,13 @@ const LoginForm = ({ setDaftar }: any) => {
     }
   };
   return (
-    <div className="login-content">
-      <h3 className="title">Log In ke Website</h3>
-      <div className="login-input">
-        <div className="input">
-          <AiOutlineMail className="icon" size={25} />
+    <div className="m-0 flex flex-col items-center">
+      <h3 className="m-0 mb-[20px] font-[800] text-[36px] underline ">
+        Log In ke Website
+      </h3>
+      <div className="flex w-[350px] translate-x-[20px] m-[5px]">
+        <div className="w-[300px] flex items-center rounded-[20px] h-[40px] bg-primary1">
+          <AiOutlineMail className="text-white ml-[15px]" size={25} />
           <input
             type="email"
             placeholder="E-mail"
@@ -95,45 +97,56 @@ const LoginForm = ({ setDaftar }: any) => {
             onChange={handleLoginOnChange}
             value={loginValue.email}
             autoComplete="off"
+            className="bg-transparent w-[80%] border-none pl-[10px] text-[16px] font-[600] text-white focus:outline-none placeholder:text-[white]/50 "
           />
         </div>
         <ErrDesc errorValue={emailErr()} errState={errEmailMsg} />
       </div>
-      <div className="login-input">
-        <div className="input">
-          <BsKey className="icon" size={25} />
+      <div className="flex w-[350px] translate-x-[20px] m-[5px]">
+        <div className="w-[300px] flex items-center rounded-[20px] h-[40px] bg-primary1">
+          <BsKey className="text-white ml-[15px]" size={25} />
           <input
             type="password"
             placeholder="Password"
             name="password"
             onChange={handleLoginOnChange}
             value={loginValue.password}
+            className="bg-transparent w-[80%] border-none pl-[10px] text-[16px] font-[600] text-white focus:outline-none placeholder:text-[white]/50 "
           />
         </div>
         <ErrDesc errorValue={passErr()} errState={errPassMsg} />
       </div>
-      <div className="ingat-lupa">
-        <div className="ingat-saya">
-          <input type="checkbox" />
-          <h5>Ingat Saya</h5>
+      <div className="flex flex-row mx-0 my-[10px] w-[60%] justify-around">
+        <div className="flex flex-row justify-center items-center">
+          <input type="checkbox" className="h-[15px]" />
+          <h5 className="m-0">Ingat Saya</h5>
         </div>
-        <div className="lupa-pwd">
-          <h5>Lupa Password</h5>
+        <div className="text-primary5 underline h-fit w-fit hover:text-[rgb(20,55,95)/0.5] cursor-pointer">
+          <h5 className="m-0">Lupa Password</h5>
         </div>
       </div>
-      <div className="confirm" onClick={handleLoginOnSubmit}>
-        <h3>Masuk</h3>
+      <div
+        className="flex justify-center items-center bg-[gray] w-200px text-center roudned-[50px]"
+        onClick={handleLoginOnSubmit}
+      >
+        <h3 className="text-white mx-[30px] my-[5px]">Masuk</h3>
       </div>
       <h4>---atau---</h4>
       <h4>Masuk Menggunakan Pihak Ketiga:</h4>
-      <div className="third-party-login">
-        <div className="third-party-login-list">
-          <GrGoogle className="google-icon" size={25} />
-          <BsFacebook className="facebook-icon" size={25} />
-          <BsApple className="apple-icon" size={25} />
+      <div className="flex flex-row items-center justify-around w-[80px] h-[50px] m-[5px] rounded-[30px]">
+        <div className="flex flex-row gap-[20px]">
+          <div className="px-[40px] py-[10px] bg-[#de5246] rounded-[50px] hover:cursor-pointer ">
+            <GrGoogle className="text-white" size={25} />
+          </div>
+          <div className="px-[40px] py-[10px] bg-[#4267b2] rounded-[50px] hover:cursor-pointer">
+            <BsFacebook className="text-white" size={25} />
+          </div>
+          <div className="px-[40px] py-[10px] bg-[#161618] rounded-[50px] hover:cursor-pointer">
+            <BsApple className=" text-white" size={25} />
+          </div>
         </div>
       </div>
-      <div className="disclaimer">
+      <div className="w-[80%] m-0">
         <h5>
           <input type="checkbox" />
           Saya telah setuju dengan <a href="persyaratan">
@@ -143,14 +156,16 @@ const LoginForm = ({ setDaftar }: any) => {
           penggunaan, dan pengungkapan informasi pribadi saya.
         </h5>
       </div>
-      <div className="divider" />
-      <div className="register">
-        <h5>
+      <div className="outline-[gray] outline-[1px] outline w-[90%] my-[10px] mx-0" />
+      <div className="flex flex-col justify-center items-center">
+        <h5 className="m-[3px]">
           Belum punya akun?{" "}
-          <span onClick={() => setDaftar(false)}>Daftar Sekarang</span>
-        </h5>
-        <h5>
-          Ingin daftar sebagai agen properti? <span>Daftar Sebagai Agen</span>
+          <span
+            className="text-[14px] underline text-primary5 hover:text-primary1 hover:cursor-pointer"
+            onClick={() => setDaftar(false)}
+          >
+            Daftar Sekarang
+          </span>
         </h5>
       </div>
     </div>
