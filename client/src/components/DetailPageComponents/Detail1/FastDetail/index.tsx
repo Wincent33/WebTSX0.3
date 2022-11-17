@@ -15,7 +15,7 @@ const FastDetail = () => {
     );
   };
   return (
-    <div className="fast-detail">
+    <div className="flex flex-col m-[10px] w-[400px] max-h-[500px] rounded-[20px] p-[25px] text-white bg-gradient-to-br from-[rgba(41,50,65,1)] via-white to-primary4">
       <div className="fast-detail-top">
         <h1>Rp 1,4 M</h1>
         <p>cicilan mulai dari Rp 8 jt/bulan</p>

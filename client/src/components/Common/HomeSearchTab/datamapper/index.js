@@ -1,4 +1,4 @@
-import WilayahIndo from "../../../../Assets/Data/WilayahIndonesia.json";
+// import WilayahIndo from "../../../../Assets/Data/WilayahIndonesia.json";
 
 const DataMapper = () => {
   let listData = [];

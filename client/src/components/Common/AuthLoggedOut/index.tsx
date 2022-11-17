@@ -8,7 +8,7 @@ function AuthLoggedOut() {
   return (
     <>
       <div
-        className="flex border-[1px] border-solid rounded-[20px] duration-300 py-[20px] px-[10px] items-center text-white max-w-fit h-[30px] hover:bg-primary4 hover:scale-110 hover:shadow-[10px_17px_21px_-2px_rgba(0,0,0,0.67)] hover:cursor-pointer"
+        className="flex z-10 border-[1px] border-solid rounded-[20px] duration-300 py-[20px] px-[10px] items-center text-white max-w-fit h-[30px] hover:bg-primary4 hover:scale-110 hover:shadow-[10px_17px_21px_-2px_rgba(0,0,0,0.67)] hover:cursor-pointer"
         onClick={() => setTrigger(true)}
       >
         <HiOutlineUserCircle size={"30px"} />
