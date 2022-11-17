@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import "./style.scss";
-// import SearchTabs from "../../Common/HomeSearchTab";
+import SearchTabs from "../../Common/HomeSearchTab";
 // import SearchTabs from "../../Common/HomeSearchTab/indexTest";
 import NavBar from "../../Common/NavBar/NavBar";
 import LoginDaftarPopUp from "../../Common/AuthLoggedOut/LoginSignUpPopUp";
@@ -28,7 +28,9 @@ export default function HomeB1() {
           <h1 className="text-white text-[56px] ml-[150px] drop-shadow-[7px_7px_3px_black] ">
             Mencari Rumah Idaman Dengan Praktis
           </h1>
-          <div className="m-0">{/* <SearchTabs /> */}</div>
+          <div className="m-0">
+            <SearchTabs />
+          </div>
         </div>
         <img
           className="absolute h-[610px] w-[1200px] translate-x-[480px] translate-y-[-50px] m-0 [clip-path:polygon(45%_10%,100%_28%,67%_100%,5%_60%)] "

@@ -1,12 +1,12 @@
 import { useState, useRef } from "react";
-import "./style.scss";
+// import Select from "react-select";
+// import "./style.scss";
 // import SearchGIF from "../../../assets/images/search.gif";
 // import SearchGIF from "../../../assets/images/search.gif";
 // import SearchGIF from "../../../assets/images/search.gif";
 // import WilayahIndo from "../../../Assets/Data/WilayahIndonesia.json";
 var SearchGIF = require("../../../assets/images/search.gif");
 var data = require("../../../assets/data/WilayahIndonesia.json");
-// import Select from "react-select";
 export default function HomeSearchTabs() {
   const [activeTab, setActiveTab] = useState(0);
 
@@ -70,25 +70,25 @@ export default function HomeSearchTabs() {
     });
   });
   return (
-    <section className="SearchTab">
-      <div className="container">
-        <section className="bloc-tabs">
+    <section className="h-fit flex items-center m-0">
+      <div className="flex flex-col relative w-[600px] drop-shadow(7px_7px_3px_black) h-[150px] my-0 mx-auto p-0 break-all border-none rounded-[20px] z-7 translate-y-[-20px] ">
+        <section className="flex justify-center gap-[15px]">
           <button
-            className={activeTab === 0 ? "tabs active-tabs" : "tabs"}
+            className={activeTab === 0 ? "text-center bg-transparent  cursor-pointer box-content relative outline-none text-[rgb(164,164,164)] border-b-[1px] border-solid before:contents-[''] before:block before:absolute before:bottom-[-5px] before:left-[50%] translate-x-[-50%] w-[90%] h-" : "text-center bg-transparent w-[20%] cursor-pointer box-content relative outline-none text-[rgb(164,164,164)]"}
             onClick={handleTabOnClick(0)}
           >
             BELI
           </button>
           <button
-            className={activeTab === 1 ? "tabs active-tabs" : "tabs"}
+            className={activeTab === 1 ? "tabs active-tabs" : ""}
             onClick={handleTabOnClick(1)}
           >
             SEWA
           </button>
         </section>
 
-        <div className="content-tabs">
-          <div className="content  active-content">
+        <div className="grow">
+          <div className="w-[100%] h-[80%] hidden justify-center items-center">
             <div className="search-box">
               <div className="search-box">
                 <img className="search-gif" src={SearchGIF} alt="gif" />
