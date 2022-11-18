@@ -1,11 +1,11 @@
 import React from "react";
-import MovingBackground from "../../Components/Common/MovingBackground";
+import MovingBackground from "../components/Common/MovingBackground";
 import "./style.scss";
-import NavBar from "../../Components/Common/NavBar/NavBar";
-import AuthLoggedOut from "../../Components/Common/AuthLoggedOut";
-// import BreadCrumbs from "../../Components/DetailPageComponents/Detail1/BreadCrumbs";
-// import ImageList from "../../Components/DetailPageComponents/Detail1/ImageList";
-// import FastDetail from "../../Components/DetailPageComponents/Detail1/FastDetail";
+import NavBar from "../components/Common/NavBar/NavBar";
+import AuthLoggedOut from "../components/Common/AuthLoggedOut";
+import BreadCrumbs from "../components/DetailPageComponents/Detail1/BreadCrumbs";
+import ImageList from "../components/DetailPageComponents/Detail1/ImageList";
+import FastDetail from "../components/DetailPageComponents/Detail1/FastDetail";
 // import Detail2 from "../../Components/DetailPageComponents/Detail2";
 // import Detail3 from "../../Components/DetailPageComponents/Detail3";
 function DetailPage() {
@@ -17,13 +17,13 @@ function DetailPage() {
         <NavBar />
         <AuthLoggedOut />
       </div>
-      {/* <BreadCrumbs /> */}
+      <BreadCrumbs />
       <div className="detail-judul">
         <h2>Judul Detail</h2>
       </div>
       <div className="detail-top">
-        {/* <FastDetail />
-        <ImageList /> */}
+        <FastDetail />
+        <ImageList />
       </div>
       {/* <Detail2 />
       <Detail3 /> */}
