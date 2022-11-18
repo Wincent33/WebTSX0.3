@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./style.scss";
+// import "./style.scss";
 const ReadMore = ({ children }: any) => {
   const text = children;
   const [isReadMore, setIsReadMore] = useState(true);
@@ -9,10 +9,15 @@ const ReadMore = ({ children }: any) => {
 
   const Collapsed = () => {
     return (
-      <div className="collapsed">
-        <div className="gradient"></div>
-        <p className="text">{text.slice(0, 600)}</p>
-        <div onClick={toggleReadMore} className="read-or-hide">
+      <div>
+        <div className="h-full max-w-full min-h-[100px] max-h-[300px] w-[1300px] absolute z-4 bg-gradient-to-t from-white to-transparent "></div>
+        <p className="text-[24px] my-[10px] mx-0 duration-[2000]">
+          {text.slice(0, 600)}
+        </p>
+        <div
+          onClick={toggleReadMore}
+          className="flex justify-center bg-primary4 rounded-b-[50px] w-full max-w-full relative z-5 py-[15px] px-0 text-white text-[32px] font-[900] items-center hover:cursor-pointer"
+        >
           V Read More V
         </div>
       </div>
@@ -20,9 +25,12 @@ const ReadMore = ({ children }: any) => {
   };
   const NotCollapsed = () => {
     return (
-      <div className="not-collapsed">
-        <p className="text">{text}</p>
-        <div onClick={toggleReadMore} className="read-or-hide">
+      <div>
+        <p className="text-[24px] my-[10px] mx-0">{text}</p>
+        <div
+          onClick={toggleReadMore}
+          className="flex justify-center bg-primary4 rounded-b-[50px] w-full max-w-full relative z-5 py-[15px] px-0 text-white text-[32px] font-[900] items-center hover:cursor-pointer"
+        >
           Show Less
         </div>
       </div>
@@ -30,7 +38,7 @@ const ReadMore = ({ children }: any) => {
   };
 
   return (
-    <div className="readmore">
+    <div className="flex w-full">
       {isReadMore ? <Collapsed /> : <NotCollapsed />}
     </div>
   );
