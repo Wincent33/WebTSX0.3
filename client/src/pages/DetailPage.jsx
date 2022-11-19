@@ -8,6 +8,7 @@ import ImageList from "../components/DetailPageComponents/Detail1/ImageList";
 import FastDetail from "../components/DetailPageComponents/Detail1/FastDetail.tsx";
 import Detail2 from "../components/DetailPageComponents/Detail2";
 import Detail3 from "../components/DetailPageComponents/Detail3";
+import Detail4 from "../components/DetailPageComponents/Detail4";
 function DetailPage() {
   return (
     <div className="flex flex-col overflow-x-hidden">
@@ -29,6 +30,7 @@ function DetailPage() {
       </div>
       <Detail2 />
       <Detail3 />
+      <Detail4/>
     </div>
   );
 }
