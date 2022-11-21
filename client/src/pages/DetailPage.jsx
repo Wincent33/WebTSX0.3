@@ -9,6 +9,7 @@ import FastDetail from "../components/DetailPageComponents/Detail1/FastDetail.ts
 import Detail2 from "../components/DetailPageComponents/Detail2";
 import Detail3 from "../components/DetailPageComponents/Detail3";
 import Detail4 from "../components/DetailPageComponents/Detail4";
+import Detail5 from "../components/DetailPageComponents/Detail5";
 function DetailPage() {
   return (
     <div className="flex flex-col overflow-x-hidden">
@@ -31,6 +32,7 @@ function DetailPage() {
       <Detail2 />
       <Detail3 />
       <Detail4/>
+      <Detail5/>
     </div>
   );
 }

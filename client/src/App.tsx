@@ -5,16 +5,16 @@ import DetailPage from "./pages/DetailPage";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/detail" element={<DetailPage />} />
-        {/* <Route path="/search" element={<SearchPage />} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/detail" element={<DetailPage />} />
+          {/* <Route path="/search" element={<SearchPage />} />
         <Route path="/input" element={<InputPage />} />
         <Route path="/simulasi-kpr" element={<KPRPage />} />
         <Route path="/dashboard/*" element={<DashBoard />} /> */}
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
   );
 }
 
