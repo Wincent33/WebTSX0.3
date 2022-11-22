@@ -15,7 +15,7 @@ const FastDetail = () => {
     );
   };
   return (
-    <div className="flex flex-col m-[10px] w-[450px] max-h-[500px] rounded-[20px] p-[25px] text-white bg-gradient-to-br from-primary5 via-primary1 to-primary4">
+    <div className="flex flex-col m-[10px] w-[30em] max-h-[500px] rounded-[20px] p-[25px] text-white bg-gradient-to-br from-primary5 via-primary1 to-primary4">
       <div className="ml-[10px] mb-[20px]">
         <h1 className="m-0 text-[24px] font-[900]">Fasilitas Properti</h1>
         <div className="flex gap-[15px] m-0 mt-[15px] ">

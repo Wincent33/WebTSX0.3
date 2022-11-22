@@ -42,19 +42,20 @@ const Detail4 = () => {
   };
 
   return (
-    <div className="relative w-full h-[400px] ">
+    <div className="relative w-full h-[400px] my-4">
       <iframe
         className=""
         width="100%"
         height="100%"
         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d26685.406165907054!2d106.95837095837521!3d-6.156281948143083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sid!4v1668830762853!5m2!1sen!2sid"
         loading="lazy"
+        title="map"
       />
-      <div className="absolute left-[10%] top-[5%] bottom-[5%] h-[90%] w-[450px] flex flex-col rounded-[20px] text-white bg-gradient-to-br from-primary5 via-primary1 to-primary4">
+      <div className="absolute left-[1vw] top-[5%] bottom-[5%] h-[90%] w-[450px] flex flex-col rounded-[20px] text-white bg-gradient-to-br from-primary5 via-primary1 to-primary4">
         <header className="text-[24px] font-[600] rounded-[20px] mt-6 mx-6 mb-1 ">
           Di Sekitar:
         </header>
-        <body className="flex flex-col gap-2 max-h-fit overflow-auto p-4 overflow-x-hidden" >
+        <body className="flex flex-col gap-2 max-h-fit overflow-auto p-4 overflow-x-hidden">
           <Item Icon={MdOutlineFastfood} title="McDonald's" />
           <Item
             Icon={MdOutlineShoppingBag}

@@ -2,12 +2,12 @@ import React from "react";
 import ReadMore from "../ReadMore";
 const Detail2 = () => {
   return (
-    <div className="m-0 flex flex-col">
-      <div className="pl-[90px]">
+    <div className="mx-auto flex flex-col w-[80vw] max-w-[1800px] relative">
+      <div>
         <h1 className="text-[32px]">Deskripsi Property</h1>
         <div className="m-0 w-[500px] border-b-[5px] border-b-primary4 border-solid" />
       </div>
-      <div className="pl-[10px] my-[10px] mx-[80px] max-w-[1300px]">
+      <div className="mx-auto pl-[10px] my-[10px] h-full w-full">
         <ReadMore>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eros
           magna, sagittis id justo sed, tristique dignissim eros. Sed non metus
