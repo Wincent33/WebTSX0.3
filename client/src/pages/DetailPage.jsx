@@ -4,7 +4,6 @@ import NavBar from "../components/Common/NavBar/NavBar";
 import AuthLoggedOut from "../components/Common/AuthLoggedOut";
 import Detail1 from "../components/DetailPageComponents/Detail1";
 import Detail2 from "../components/DetailPageComponents/Detail2";
-import Detail3 from "../components/DetailPageComponents/Detail3";
 import Detail4 from "../components/DetailPageComponents/Detail4";
 import Detail5 from "../components/DetailPageComponents/Detail5";
 function DetailPage() {
@@ -18,7 +17,6 @@ function DetailPage() {
       </div>
       <Detail1 />
       <Detail2 />
-      <Detail3 />
       <Detail4 />
       <Detail5 />
     </div>

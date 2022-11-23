@@ -17,7 +17,7 @@ const Detail4 = () => {
     return (
       <div className="items-center flex h-fit flex-row border-white rounded-[20px] border-solid border-[1px] p-3 hover:scale-105 hover:cursor-pointer duration-200">
         <Icon size="25px" color="white" />
-        <div className="border-white border-solid h-full border-[1px] mx-2" />
+        <div className="border-white border-solid h-full border-l-[3px] mx-2" />
 
         <div className="flex justify-between w-full">
           <div className="flex flex-col">
@@ -51,7 +51,7 @@ const Detail4 = () => {
         loading="lazy"
         title="map"
       />
-      <div className="absolute left-[1vw] top-[5%] bottom-[5%] h-[90%] w-[450px] flex flex-col rounded-[20px] text-white bg-gradient-to-br from-primary5 via-primary1 to-primary4">
+      <div className="absolute left-[50vw] -translate-x-[600px] top-[5%] bottom-[5%] h-[90%] w-[450px] flex flex-col rounded-[20px] text-white bg-gradient-to-br from-primary5 via-primary1 to-primary4">
         <header className="text-[24px] font-[600] rounded-[20px] mt-6 mx-6 mb-1 ">
           Di Sekitar:
         </header>

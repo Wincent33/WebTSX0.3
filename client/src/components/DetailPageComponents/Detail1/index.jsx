@@ -12,7 +12,7 @@ const Detail1 = () => {
         <div className="flex w-full max-w-[1200px]">
           <h2 className="text-2xl font-bold my-[15px]">Judul Detail</h2>
         </div>
-        <div className="flex flex-row justify-between items-center w-[90vw] h-fit mx-auto max-w-[1300px]">
+        <div className="flex flex-row justify-between items-center w-[90vw] h-fit mx-auto max-w-[1200px]">
           <FastDetail />
           <ImageList />
         </div>

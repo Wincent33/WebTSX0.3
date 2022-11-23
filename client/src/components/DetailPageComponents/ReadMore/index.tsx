@@ -16,7 +16,7 @@ const ReadMore = ({ children }: any) => {
         </p>
         <div
           onClick={toggleReadMore}
-          className="flex justify-center bg-primary4 rounded-b-[50px] w-full max-w-full relative z-5 py-[15px] px-0 text-white text-[32px] font-[900] items-center hover:cursor-pointer"
+          className="flex justify-center bg-primary4 rounded-b-[50px] w-full max-w-full relative z-5 py-[15px] px-0 text-white text-2xl font-[900] items-center hover:cursor-pointer hover:scale-105 duration-200"
         >
           V Read More V
         </div>
@@ -29,7 +29,7 @@ const ReadMore = ({ children }: any) => {
         <p className="text-base my-[10px] mx-0">{text}</p>
         <div
           onClick={toggleReadMore}
-          className="flex justify-center bg-primary4 rounded-b-[50px] w-full max-w-full relative z-5 py-[15px] px-0 text-white text-[32px] font-[900] items-center hover:cursor-pointer"
+          className="flex justify-center bg-primary4 rounded-b-[50px] w-full max-w-full relative z-5 py-[15px] px-0 text-white text-2xl font-[900] items-center hover:cursor-pointer"
         >
           Show Less
         </div>
