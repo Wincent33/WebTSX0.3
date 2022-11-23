@@ -6,11 +6,11 @@ import FastDetail from "./FastDetail";
 import ImageList from "./ImageList";
 const Detail1 = () => {
   return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-[1800px] w-[90vw] ">
+    <div className="bg-white max-h-[500px]">
+      <div className="mx-auto max-w-[1200px]">
         <BreadCrumbs />
-        <div className="flex w-[80vw] ml-[100px]">
-          <h2 className="text-[36px] font-[700] my-[15px]">Judul Detail</h2>
+        <div className="flex w-full max-w-[1200px]">
+          <h2 className="text-2xl font-bold my-[15px]">Judul Detail</h2>
         </div>
         <div className="flex flex-row justify-between items-center w-[90vw] h-fit mx-auto max-w-[1300px]">
           <FastDetail />

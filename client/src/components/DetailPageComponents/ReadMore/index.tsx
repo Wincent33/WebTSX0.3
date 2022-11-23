@@ -10,8 +10,8 @@ const ReadMore = ({ children }: any) => {
   const Collapsed = () => {
     return (
       <div className="w-full h-full">
-        <div className=" max-w-full h-[70%] w-full absolute z-4 bg-gradient-to-t from-white via-white to-transparent "></div>
-        <p className="text-[24px] my-[10px] mx-0 duration-[2000]">
+        <div className=" max-w-[1200px] h-[70%]  w-full absolute z-4 bg-gradient-to-t from-white via-white to-transparent "></div>
+        <p className="text-base my-[10px] mx-0 duration-[2000]">
           {text.slice(0, 720)}
         </p>
         <div
@@ -26,7 +26,7 @@ const ReadMore = ({ children }: any) => {
   const NotCollapsed = () => {
     return (
       <div>
-        <p className="text-[24px] my-[10px] mx-0">{text}</p>
+        <p className="text-base my-[10px] mx-0">{text}</p>
         <div
           onClick={toggleReadMore}
           className="flex justify-center bg-primary4 rounded-b-[50px] w-full max-w-full relative z-5 py-[15px] px-0 text-white text-[32px] font-[900] items-center hover:cursor-pointer"

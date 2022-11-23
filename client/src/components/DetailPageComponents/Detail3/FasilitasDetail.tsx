@@ -15,25 +15,25 @@ const FasilitasDetail = () => {
   const Items = ({ title, value, unit, powerOf }: any) => {
     return (
       <div className="flex flex-row h-fit w-fit bg-primary4 text-white py-1 px-4 rounded-2xl">
-        <BiCctv size={"30px"} color={"white"} />
-        <p className="text-[20px]">{value}</p>
+        <BiCctv size={"20px"} color={"white"} />
+        <p className="text-xs">{value}</p>
       </div>
     );
   };
   return (
-    <div className="flex flex-col m-[10px] w-[650px] max-h-[500px] rounded-[20px] p-[25px] text-white bg-gradient-to-br from-primary5 via-primary1 to-primary4">
+    <div className="flex flex-col mx-auto w-full max-w-[1200px] max-h-[500px] rounded-[20px] p-[25px] text-white bg-gradient-to-br from-primary5 via-primary1 to-primary4">
       <div className="mb-[20px]">
         <h1 className="ml-[10px] mb-[10px] text-[30px] font-[900]">
           Fasilitas Properti:
         </h1>
         <div className="flex flex-wrap gap-1">
           <div className="flex flex-row h-fit w-fit bg-primary4 text-white py-1 px-4 rounded-2xl">
-            <BiCctv size={"30px"} color={"white"} />
-            <p className="text-[20px]">Keamanan 24/7</p>
+            <BiCctv size={"20px"} color={"white"} />
+            <p className="text-sm">Keamanan 24/7</p>
           </div>
           <div className="flex flex-row h-fit w-fit bg-primary4 text-white py-1 px-4 rounded-2xl">
-            <MdPool size={"30px"} color={"white"} />
-            <p className="text-[20px]">Kolam Pribadi</p>
+            <MdPool size={"20px"} color={"white"} />
+            <p className="text-sm">Kolam Pribadi</p>
           </div>
           <div className="flex flex-row h-fit w-fit bg-primary4 text-white py-1 px-4 rounded-2xl">
             <MdOutlineWaterDrop size={"30px"} color={"white"} />
