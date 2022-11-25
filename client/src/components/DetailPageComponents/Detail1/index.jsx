@@ -1,6 +1,4 @@
 import React from "react";
-import NavBar from "../../Common/NavBar/NavBar";
-import AuthLoggedOut from "../../Common/AuthLoggedOut";
 import BreadCrumbs from "./BreadCrumbs";
 import FastDetail from "./FastDetail";
 import ImageList from "./ImageList";
