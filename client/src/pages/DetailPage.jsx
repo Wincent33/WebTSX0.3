@@ -6,6 +6,7 @@ import Detail1 from "../components/DetailPageComponents/Detail1";
 import Detail2 from "../components/DetailPageComponents/Detail2";
 import Detail4 from "../components/DetailPageComponents/Detail4";
 import Detail5 from "../components/DetailPageComponents/Detail5";
+import Detail6 from "../components/DetailPageComponents/Detail6";
 function DetailPage() {
   return (
     <div className="flex flex-col overflow-x-hidden">
@@ -19,6 +20,7 @@ function DetailPage() {
       <Detail2 />
       <Detail4 />
       <Detail5 />
+      <Detail6 />
     </div>
   );
 }
