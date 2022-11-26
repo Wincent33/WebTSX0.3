@@ -33,7 +33,7 @@ const Detail5 = () => {
   }));
   return (
     <div className="flex flex-row justify-between gap-4 w-[90vw] mx-auto max-w-[1200px] h-fit">
-      <div className="flex flex-col w-full bg-primary4 p-5">
+      <div className="flex flex-col w-full bg-transparent border-solid border-2 border-primary4 rounded-3xl  p-5">
         <text className="text-2xl font-bold">Simulasi KPR</text>
         <p className="text-xl font-bold">
           Harga Properti: Rp {hargaProperti.toLocaleString()}
