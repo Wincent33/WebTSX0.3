@@ -4,6 +4,7 @@ import NavBar from "../components/Common/NavBar/NavBar";
 import AuthLoggedOut from "../components/Common/AuthLoggedOut";
 import KPRHero from "../components/KPRPageComponents/KPRHero";
 import SurveyKPR from "../components/KPRPageComponents/SurveyKPR";
+import SurveyKPRT from "../components/KPRPageComponents/SurveyKPR/IndexT";
 const KPRPage = () => {
   return (
     <div className="flex flex-col">
@@ -18,6 +19,7 @@ const KPRPage = () => {
       </div>
       <div className="kpr2">
         <SurveyKPR />
+        <SurveyKPRT />
       </div>
     </div>
   );

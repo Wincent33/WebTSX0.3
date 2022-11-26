@@ -1,5 +1,7 @@
 import React from "react";
-const FinanceSVG = require("../../assets/svg/finance.svg");
+import FinanceSVG from "../../assets/svg/finance.svg";
+// const FinanceSVG = require("../../assets/svg/finance.svg");
+
 const KPRHero = () => {
   return (
     <div className="mt-[80px] z-10 flex justify-center gap-[80px]">
