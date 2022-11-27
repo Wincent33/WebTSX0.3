@@ -5,7 +5,7 @@ import Tab from "@mui/material/Tab";
 import MenuItem from "@mui/material/MenuItem";
 const BanyakKredit = require("./banyakKredit.json");
 const LamaCicilan = require("./lamaCicilan.json");
-const Pekerjaan = require("./pekerjaan.json")
+const Pekerjaan = require("./pekerjaan.json");
 const SurveyKPRT = () => {
   const [dpValue, setDpValue] = useState("tidak ada");
   const handleDpChange = (event: React.SyntheticEvent, newValue: string) => {
@@ -27,7 +27,7 @@ const SurveyKPRT = () => {
               placeholder="0"
               size="small"
               InputProps={{
-                startAdornment: <p className="text-[gray] mr-2">Rp</p>
+                startAdornment: <p className="text-[gray] mr-2">Rp</p>,
               }}
             />
           </div>
@@ -47,7 +47,7 @@ const SurveyKPRT = () => {
         <div className="flex flex-col gap-5">
           <div className="flex flex-row justify-between">
             <label className="flex items-center text-l">
-              Total Cicilan Saat Ini:
+              Nominal Total Cicilan Saat Ini:
             </label>
             <TextField
               hiddenLabel
@@ -87,6 +87,9 @@ const SurveyKPRT = () => {
             type={"number"}
             placeholder="0"
             size="small"
+            InputProps={{
+              startAdornment: <p className="text-[gray] mr-2">Rp</p>,
+            }}
           />
         </div>
         <div className="w-96 my-3 border-solid border-[2px] border-primary4" />
@@ -125,7 +128,7 @@ const SurveyKPRT = () => {
           <label>Penghasilan Bersih Bulanan:</label>
           <TextField
             InputProps={{
-              startAdornment: <p className="text-[gray] mr-2">Rp</p>
+              startAdornment: <p className="text-[gray] mr-2">Rp</p>,
             }}
             hiddenLabel
             variant="outlined"
@@ -183,6 +186,24 @@ const SurveyKPRT = () => {
               </MenuItem>
             ))}
           </TextField>
+        </div>
+        <div className="flex flex-col gap-5">
+          <div className="flex flex-row justify-between">
+            <label className="flex items-center text-l">Usia Sekarang:</label>
+            <TextField
+              hiddenLabel
+              helperText={"1,2 miliar"}
+              variant="outlined"
+              type={"number"}
+              placeholder="21"
+              required
+              error
+              size="small"
+              InputProps={{
+                endAdornment: <p className="text-[gray]">Tahun</p>,
+              }}
+            />
+          </div>
         </div>
       </form>
       <div className="m-auto w-[500px]">

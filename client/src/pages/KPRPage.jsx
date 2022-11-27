@@ -17,8 +17,7 @@ const KPRPage = () => {
         </div>
         <KPRHero />
       </div>
-      <div className="kpr2">
-        <SurveyKPR />
+      <div className="bg-white">
         <SurveyKPRT />
       </div>
     </div>
