@@ -1,0 +1,22 @@
+[
+  {
+    "value": 0,
+    "label": "Karyawan Kontrak"
+  },
+  {
+    "value": 1,
+    "label": "Karyawan Tetap < 2 Tahun"
+  },
+  {
+    "value": 2,
+    "label": "Karyawan Tetap ≥ 2 Tahun"
+  },
+  {
+    "value": 3,
+    "label": "Profesional/Wiraswasta < 3 Tahun"
+  },
+  {
+    "value": 4,
+    "label": "Profesional/Wiraswasta ≥ 3 Tahun "
+  }
+]

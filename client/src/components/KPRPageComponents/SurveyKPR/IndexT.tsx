@@ -3,11 +3,12 @@ import TextField from "@mui/material/TextField";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import MenuItem from "@mui/material/MenuItem";
-
+const BanyakKredit = require("./banyakKredit.json");
+const LamaCicilan = require("./lamaCicilan.json");
+const Pekerjaan = require("./pekerjaan.json")
 const SurveyKPRT = () => {
   const [dpValue, setDpValue] = useState("tidak ada");
-
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+  const handleDpChange = (event: React.SyntheticEvent, newValue: string) => {
     setDpValue(newValue);
   };
   const DpForm = () => {
@@ -17,6 +18,36 @@ const SurveyKPRT = () => {
           <div className="flex flex-row justify-between">
             <label className="flex items-center text-l">
               Nominal Uang Muka:
+            </label>
+            <TextField
+              hiddenLabel
+              helperText={"1,2 miliar"}
+              variant="outlined"
+              type={"number"}
+              placeholder="0"
+              size="small"
+              InputProps={{
+                startAdornment: <p className="text-[gray] mr-2">Rp</p>
+              }}
+            />
+          </div>
+        </div>
+      );
+    } else {
+      return <></>;
+    }
+  };
+  const [cclValue, setCclValue] = useState("tidak ada");
+  const handleCclChange = (event: React.SyntheticEvent, newValue: string) => {
+    setCclValue(newValue);
+  };
+  const CclForm = () => {
+    if (cclValue === "ada") {
+      return (
+        <div className="flex flex-col gap-5">
+          <div className="flex flex-row justify-between">
+            <label className="flex items-center text-l">
+              Total Cicilan Saat Ini:
             </label>
             <TextField
               hiddenLabel
@@ -32,36 +63,7 @@ const SurveyKPRT = () => {
       return <></>;
     }
   };
-  const BanyakCicilan = [
-    {
-      value: 0,
-      label: "0",
-    },
-    {
-      value: 1,
-      label: "1",
-    },
-    {
-      value: 2,
-      label: "2",
-    },
-    {
-      value: 3,
-      label: "3",
-    },
-    {
-      value: 4,
-      label: "4",
-    },
-    {
-      value: 5,
-      label: "5",
-    },
-    {
-      value: 6,
-      label: "5+",
-    },
-  ];
+
   return (
     //SurveyKPR Container
     <div className="flex flex-col justify-center mx-auto">
@@ -93,7 +95,7 @@ const SurveyKPRT = () => {
           <label>Telah Menyediakan Uang Muka / DP:</label>
           <Tabs
             value={dpValue}
-            onChange={handleChange}
+            onChange={handleDpChange}
             aria-label="wrapped label tabs example"
           >
             <Tab value="ada" label="ada" />
@@ -112,7 +114,7 @@ const SurveyKPRT = () => {
             select
             size="small"
           >
-            {BanyakCicilan.map((option) => (
+            {BanyakKredit.map((option: any) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
               </MenuItem>
@@ -122,6 +124,9 @@ const SurveyKPRT = () => {
         <div className="flex justify-between">
           <label>Penghasilan Bersih Bulanan:</label>
           <TextField
+            InputProps={{
+              startAdornment: <p className="text-[gray] mr-2">Rp</p>
+            }}
             hiddenLabel
             variant="outlined"
             type={"number"}
@@ -129,7 +134,65 @@ const SurveyKPRT = () => {
             size="small"
           />
         </div>
+        <div className="w-96 my-3 border-solid border-[2px] border-primary4" />
+        {/* Cicilan Bulanan */}
+        <div className="flex justify-between">
+          <label>Memiliki Cicilan Bulanan yang Berlangsung:</label>
+          <Tabs
+            value={cclValue}
+            onChange={handleCclChange}
+            aria-label="wrapped label tabs example"
+          >
+            <Tab value="ada" label="ada" />
+            <Tab value="tidak ada" label="tidak ada" />
+          </Tabs>
+        </div>
+        <CclForm />
+        <div className="w-96 my-3 border-solid border-[2px] border-primary4" />
+        {/* Lama Cicilan */}
+        <div className="flex justify-between">
+          <label>Lama Cicilan/Angsuran yang ingin diajukan:</label>
+          <TextField
+            className="w-[50%]"
+            hiddenLabel
+            variant="outlined"
+            select
+            size="small"
+          >
+            {LamaCicilan.map((option: any) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </div>
+        <div className="w-96 my-3 border-solid border-[2px] border-primary4" />
+        {/* Pekerjaan */}
+        <div className="flex justify-between">
+          <label>Pekerjaan Saat Ini:</label>
+          <TextField
+            className="w-[50%]"
+            hiddenLabel
+            variant="outlined"
+            select
+            size="small"
+          >
+            {Pekerjaan.map((option: any) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </div>
       </form>
+      <div className="m-auto w-[500px]">
+        <p className="text-[gray]">
+          Dengan klik tombol di bawah ini, Anda menyetujui Syarat dan Ketentuan
+          serta Kebijakan Privasi Pinhome yang berlaku. Data dan informasi Anda
+          tidak akan disebarluaskan tanpa persetujuan Anda.
+        </p>
+        <button className="w-[500px] h-[50px]">Lihat Kemampuan Anda</button>
+      </div>
     </div>
   );
 };
