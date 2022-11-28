@@ -1,7 +1,6 @@
 import React from "react";
-import "./style.scss";
 
-export default function LuasTanah(props) {
+export default function LuasBangunan(props) {
   const { minVal, setMinVal, maxVal, setMaxVal } = props;
 
   const minOnChange = (event) => {
@@ -13,10 +12,13 @@ export default function LuasTanah(props) {
   };
 
   return (
-    <div className="luas-tanah-container">
-      <div className="luas-tanah-text">Luas tanah</div>
-      <div className="luas-tanah-min-max">
+    // Luas Bangunan
+    <div className="flex flex-row justify-center items-center">
+      <div className="ml-7">Luas Bangunan</div>
+      {/* Luas Bangunan Min Max */}
+      <div className="flex justify-center items-center mr-12">
         <input
+          className="h-5 pl-2 w-24"
           type="number"
           placeholder="Min."
           value={minVal}
@@ -24,6 +26,7 @@ export default function LuasTanah(props) {
         />
         <h2>-</h2>
         <input
+          className="h-5 pl-2 w-24"
           type="number"
           placeholder="Max."
           value={maxVal}
