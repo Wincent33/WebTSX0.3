@@ -1,5 +1,5 @@
 import React from "react";
-import { WordifyRupiah } from "../../../Utils/WordifyRupiah";
+import { WordifyRupiah } from "../../../assets/utils/WordifyRupiah";
 import PropertyCards from "../../Common/PropertyCards";
 import "./style.scss";
 // import toRupiah from "@develoka/angka-rupiah-js";

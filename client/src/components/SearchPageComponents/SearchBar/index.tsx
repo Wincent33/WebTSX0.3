@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
-import SearchGIF from "../../../Assets/Images/search.gif";
 import "./style.scss";
+const SearchGIF = require("../../../assets/images/search.gif")
 var data = require("../../../Assets/Data/MOCK_DATA.json");
 
 type Provinsi = {
