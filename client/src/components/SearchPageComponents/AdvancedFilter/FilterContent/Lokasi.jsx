@@ -1,14 +1,14 @@
 import React from "react";
-const SearchGIF = require("../../../../../assets/images/search.gif");
-var data = require("../../../../../Assets/Data/MOCK_DATA.json");
+const SearchGIF = require("../../../../assets/images/search.gif");
+var data = require("../../../../assets/data/MOCK_DATA.json");
 
-const Lokasi = (props: any) => {
+const Lokasi = (props) => {
   const { locationSelect, setLocationSelect } = props;
 
-  const onChange = (event: React.FormEvent<HTMLInputElement>) => {
-    setLocationSelect((event.target as HTMLInputElement).value);
+  const onChange = (event) => {
+    setLocationSelect(event.target.value);
   };
-  const onSearchList = (searchTerm: any) => {
+  const onSearchList = (searchTerm) => {
     setLocationSelect(searchTerm);
   };
 
@@ -29,7 +29,7 @@ const Lokasi = (props: any) => {
       {/* Search Result */}
       <div className="w-[433px] h-fit max-h-[200px] bg-white absolute translate-y-11 rounded-lg overflow-auto flex bg-clip-content flex-col z-50 scrollbar-hide">
         {data
-          .filter((item: any) => {
+          .filter((item) => {
             const searchTerm = locationSelect.toLowerCase();
             const place = item.place.toLowerCase();
 
@@ -38,7 +38,7 @@ const Lokasi = (props: any) => {
             );
           })
           .slice(0, 20)
-          .map((item: any) => (
+          .map((item) => (
             <div
               className="bg-clip-content list-none p-4 m-0 hover:bg-primary5 hover:text-white hover:font-bold hover:cursor-pointer"
               key={item.id}

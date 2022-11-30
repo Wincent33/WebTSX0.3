@@ -4,7 +4,7 @@ import { HiOutlineUserCircle } from "react-icons/hi";
 import LoginDaftarPopUp from "../components/Common/AuthLoggedOut/LoginSignUpPopUp";
 import MovingBackground from "../components/Common/MovingBackground";
 import AuthLoggedOut from "../components/Common/AuthLoggedOut";
-
+import Search1 from "../components/SearchPageComponents/Search1"
 const SearchPage = () => {
   return (
     <div className="flex flex-col">
@@ -15,7 +15,8 @@ const SearchPage = () => {
           <NavBar />
           <AuthLoggedOut className="ml-30px" />
         </div>
-        <KPRHero />
+
+        <Search1/>
       </div>
       <div className="bg-white">
         <></>

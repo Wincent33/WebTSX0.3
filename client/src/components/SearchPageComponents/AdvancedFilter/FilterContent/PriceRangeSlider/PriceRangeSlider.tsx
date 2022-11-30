@@ -1,7 +1,5 @@
-import React from "react";
-import "./style.scss";
+import React, {useState} from "react";
 import Slider from "@mui/material/Slider";
-import "rc-slider/assets/index.css";
 
 const hargaLabel = {
   0: "0",
@@ -19,8 +17,11 @@ const hargaLabel = {
 function valuetext(value: number) {
   return `${value}°C`;
 }
-const [value1, setValue1] = React.useState<number[]>([20, 37]);
-const minDistance = 10;
+
+
+const PriceRangeSlider = (props:any) => {
+  const [value1, setValue1] = useState<number[]>([20, 37]);
+  const minDistance = 10;
 const handleChange1 = (
   event: Event,
   newValue: number | number[],
@@ -35,7 +36,6 @@ const handleChange1 = (
     setValue1([value1[0], Math.max(newValue[1], value1[0] + minDistance)]);
   }
 };
-const PriceRangeSlider = (props:any) => {
   const { sliderValues, setSliderValues } = props;
   // const [sliderValues, setSliderValues] = React.useState([0, 10]);
   return (

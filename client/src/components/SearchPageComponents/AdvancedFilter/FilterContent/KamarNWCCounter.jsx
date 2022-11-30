@@ -1,7 +1,5 @@
 import React from "react";
-import BedroomIcon from "../../../../../assets/images/bedroom.png";
-import BathroomIcon from "../../../../../assets/images/bathroom.png";
-
+import {BiBed, BiBath} from "react-icons/bi"
 
 export default function KamarNWCCounter(props) {
   const { kamarCounter, wCCounter, setKamarCounter, setWCCounter } = props;
@@ -51,12 +49,7 @@ export default function KamarNWCCounter(props) {
           </button>
           {/* Jumlah Kamar */}
           <div className="flex flex-row justify-center items-center ml-3">
-            <img
-              className="w-[40px] h-[40px]"
-              width="50px"
-              src={BedroomIcon}
-              alt="bathroom"
-            />
+            <BiBed size={"40px"} color={"white"}/>
             <h2 className="break-keep p-4 w-10 whitespace-nowrap">x {kamarCounter}</h2>
           </div>
           {/* Button */}
@@ -75,12 +68,7 @@ export default function KamarNWCCounter(props) {
           </button>
           {/* Jumlah WC */}
           <div className="flex flex-row justify-center items-center ml-2">
-            <img
-              className="w-[40px] h-[40px]"
-              width="50px"
-              src={BathroomIcon}
-              alt="bathroom"
-            />
+            <BiBath size={"40px"} color={"white"}/>
             <h2 className="break-keep p-4 w-10 whitespace-nowrap">x {wCCounter}</h2>
           </div>
           {/* Button */}

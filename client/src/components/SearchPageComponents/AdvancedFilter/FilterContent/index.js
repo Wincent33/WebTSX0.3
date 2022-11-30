@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./style.scss";
 import PriceRangeSlider from "./PriceRangeSlider/PriceRangeSlider";
 import FurnishedOption from ".";
 import LuasBangunan from "./LuasBangunan";
@@ -8,7 +7,7 @@ import KamarNWCCounter from "./KamarNWCCounter";
 import Fasilitas from ".";
 import ZonaInteraksi from "./ZonaInteraksi";
 import YardOption from "./YardOption";
-import BeliSewa from "./BeliSewa/BeliSewa";
+import BeliSewa from "./BeliSewa";
 import JenisProperti from "..";
 import Lokasi from "./Lokasi";
 
@@ -44,7 +43,7 @@ export default function FilterContent() {
   const [zonaValue, setZonaValue] = useState("");
   const [yardValue, setYardValue] = useState(false);
   return (
-    <form onSubmit={handleSubmit} className="filter-content">
+    <form onSubmit={handleSubmit} className="m-0 flex flex-col z-[2]">
       <div className="filter-sewa-beli">
         <BeliSewa activeTab={beliSewaValue} setActiveTab={setBeliSewaValue} />
       </div>

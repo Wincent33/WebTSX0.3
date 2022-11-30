@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import "./style.scss";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 
-export default function BeliSewa(props: any) {
+export default function BeliSewa(props) {
   const [status, setStatus] = useState("beli");
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+  const handleChange = (event, newValue) => {
     setStatus(newValue);
   };
   return (

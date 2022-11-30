@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import "./style.scss";
 import Select from "react-select";
-import JenisPropertiOption from "../../../Assets/Data/JenisPropertiOption.json";
-import HargaOption from "../../../Assets/Data/HargaOption.json";
+import JenisPropertiOption from "../../../assets/data/JenisPropertiOption.json"
+import HargaOption from "../../../assets/data/HargaOption.json"
 function QuickFilters() {
   const [jenisValue, setJenisValue] = useState("");
 

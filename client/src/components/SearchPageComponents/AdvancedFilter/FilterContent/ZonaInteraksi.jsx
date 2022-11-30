@@ -1,6 +1,5 @@
 import React from "react"
 import Select from "react-select"
-import "./style.scss"
 
  const ZonaInteraksi=(props)=>{
     const {selectedOption, setSelectedOptions}= props
