@@ -34,8 +34,10 @@ function QuickFilters() {
   ];
 
   return (
-    <div className="quick-filters">
-      <div className="jenis-properti">
+    // Quick Filter
+    <div className="flex flex-row items-center gap-3 px-12">
+      {/* Jenis Properti */}
+      <div className="flex items-center">
         <Select
           options={JenisPropertiOption}
           isClearable={true}
@@ -50,7 +52,8 @@ function QuickFilters() {
         </select> */}
       </div>
       <label>|</label>
-      <div className="harga-filter">
+      {/* Harga Filter */}
+      <div className="flex flex-row items-center">
         <div className="harga-min">
           <Select
             options={HargaOption}

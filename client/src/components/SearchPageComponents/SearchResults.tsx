@@ -1,8 +1,6 @@
 import React from "react";
-import { WordifyRupiah } from "../../../assets/utils/WordifyRupiah";
-import PropertyCards from "../../Common/PropertyCards";
-import "./style.scss";
-// import toRupiah from "@develoka/angka-rupiah-js";
+import { WordifyRupiah } from "../../assets/utils/WordifyRupiah";
+import PropertyCards from "../Common/PropertyCards";
 
 export default function SearchResults() {
   const SearchData = [
@@ -98,11 +96,10 @@ export default function SearchResults() {
     );
   });
   return (
-    <div>
-      <div className="search-result">
-        <div className="searched">{listItems}</div>
+      // Search Result
+      <div className="flex flex-row">
+        <div className="flex flex-row w-[80%] flex-wrap justify-evenly gap-2 pt-7">{listItems}</div>
         <div className="right-side">ads</div>
       </div>
-    </div>
   );
 }

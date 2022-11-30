@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
-import "./style.scss";
-const SearchGIF = require("../../../assets/images/search.gif")
+const SearchGIF = require("../../../assets/images/search.gif");
 var data = require("../../../Assets/Data/MOCK_DATA.json");
 
 type Provinsi = {
@@ -86,8 +85,9 @@ const SearchBar = () => {
     })
     .slice(0, 20)
     .map((item: any) => (
+      // Location
       <div
-        className="location"
+        className="bg-clip-content list-none p-4 m-0 hover:bg-primary5 hover:text-white hover:font-bold hover:cursor-pointer"
         key={item.id}
         onClick={() => OnSearchListClick(item.place)}
       >
@@ -95,25 +95,55 @@ const SearchBar = () => {
       </div>
     ));
   return (
-    <section className="advanced-searchbar">
-      <div className="search-box">
-        <img className="search-gif" src={SearchGIF} alt="gif" height={"50px"} />
+    // Advanced SearchBar
+    <section className="m-0">
+      {/* Search Box */}
+      <div className="flex justify-start bg-primary1 py-1 px-12">
+        {/* Search GIF */}
+        <img
+          className="h-10 w-10 rounded-l-lg"
+          src={SearchGIF}
+          alt="gif"
+          height={"50px"}
+        />
+        {/* Search Text */}
         <input
-          className="search-text"
+          className="w-[500px] h-10 border-none outline-none p-0 text-xl capitalize"
           type="text"
           placeholder="Ketik Lokasi..."
           value={value}
           onChange={handleOnChange}
           ref={inputRef}
         />
-        <div className="search-btn-bg">
-          <button className="search-button">CARI</button>
+        {/* Search Button Bg */}
+        <div className="m-0 h-10 flex bg-white items-center rounded-r-lg ">
+          {/* Search Button */}
+          <button className="rounded-lg h-7 w-20 mr-1 bg-primary5 text-white font-semibold border-primary5 border-[2px] hover:bg-primary4 hover:translate-y-[1px] hover:translate-x-[1px]">
+            CARI
+          </button>
         </div>
-        <div className="search-result">{SearchResult}</div>
-        <section className="filters"></section>
+        {/* Search Result */}
+        <div className="w-[620px] h-fit max-h-52 bg-white absolute translate-y-[45px] rounded-lg overflow-auto flex box-content flex-col scrollbar-hide">
+          {SearchResult}
+        </div>
+        {/* Filters */}
+        <section className="m-1 flex flex-col justify-around items-center"></section>
       </div>
     </section>
   );
 };
 
+//   .item {
+//     background-color: white;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 40px;
+//     width: fit-content;
+//     border-radius: 5px;
+//     padding: 0px 20px;
+//     margin: 0px 5px;
+//     .item-text {
+//       font-size: 16px;
+//     }
 export default SearchBar;

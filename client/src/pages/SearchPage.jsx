@@ -6,7 +6,22 @@ import MovingBackground from "../components/Common/MovingBackground";
 import AuthLoggedOut from "../components/Common/AuthLoggedOut";
 
 const SearchPage = () => {
-  return <div>SearchPage</div>;
+  return (
+    <div className="flex flex-col">
+      <div>
+        <MovingBackground />
+        <div className="flex justify-between items-center px-[100px] max-w-[2000px]">
+          <img className="w-[200px] h-[100px] z-2" src="" alt="logo" />
+          <NavBar />
+          <AuthLoggedOut className="ml-30px" />
+        </div>
+        <KPRHero />
+      </div>
+      <div className="bg-white">
+        <></>
+      </div>
+    </div>
+  );
 };
 
 export default SearchPage;
