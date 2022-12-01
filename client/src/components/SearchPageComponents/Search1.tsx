@@ -14,7 +14,10 @@ function Search1() {
         {/* Advanced Filter Button */}
         <button
           className="bg-transparent border-white border-solid border-[2px] rounded-2xl text-white duration-300 hover:scale-110 hover:cursor-pointer hover:bg-primary4 hover:shadow-[10px_17px_21px_-2px_rgba(0,0,0,67%)]"
-          onClick={() => setTrigger(true)}
+          onClick={() => {
+            setTrigger(true);
+            console.log("pressed" + trigger)
+          }}
         >
           Advanced Filter
         </button>

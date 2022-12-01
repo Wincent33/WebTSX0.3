@@ -1,12 +1,15 @@
 import React from "react";
 import FilterContent from "./FilterContent/index";
-import "./style.scss";
+
 function AdvancedFilter(props: any) {
   return props.trigger ? (
-    <div className="filter-popup">
-      <div className="filter-inner">
+    // Filter PopUP
+    <div className="fixed top-0 left-0 w-full h-[100vh] bg-primary5 bg-opacity-20 flex justify-center items-center z-[2]">
+      {/* Filter Inner */}
+      <div className="relative p-8 w-full max-w-[640px] bg-white max-h-[500px] overflow-y-auto overflow-x-hidden rounded-[50px] z-[2] scrollbar-hide">
+        {/* Close Button */}
         <button
-          className="close-btn"
+          className="absolute top-4 right-4"
           onClick={() => {
             props.setTrigger(false);
           }}
