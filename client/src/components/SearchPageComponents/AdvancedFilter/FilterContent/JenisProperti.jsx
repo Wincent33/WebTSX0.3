@@ -1,6 +1,5 @@
 import React from "react";
 import Select from "react-select";
-import "./style.scss";
 
 const options = [
   { value: "RumahTapak", label: "Rumah Tapak" },
@@ -27,6 +26,7 @@ const JenisProperti = (props) => {
         value={selectedOptions}
         onChange={handleSelectedOptionsOnChange}
         options={options}
+        className="w-[70%] mx-auto"
       />
     </React.Fragment>
   );

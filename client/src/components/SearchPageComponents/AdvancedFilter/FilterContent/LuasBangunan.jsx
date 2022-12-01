@@ -13,7 +13,7 @@ export default function LuasBangunan(props) {
 
   return (
     // Luas Bangunan
-    <div className="flex flex-row justify-center items-center">
+    <div className="flex flex-row  w-[75%] mx-auto justify-between items-center">
       <div className="ml-7">Luas Bangunan</div>
       {/* Luas Bangunan Min Max */}
       <div className="flex justify-center items-center mr-12">

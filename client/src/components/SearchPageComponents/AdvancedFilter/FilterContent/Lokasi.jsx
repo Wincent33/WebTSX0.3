@@ -14,7 +14,7 @@ const Lokasi = (props) => {
 
   return (
     // Filter Lokasi
-    <div className="flex justify-center w-full">
+    <div className="flex justify-center mx-auto w-fit border-black border-solid rounded-xl border-[1px]">
       {/* Search GIF/Left */}
       <img className="h-10 rounded-r-xl" src={SearchGIF} alt="gif" />
       {/* Seach Input / Right */}

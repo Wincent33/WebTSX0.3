@@ -13,12 +13,12 @@ export default function LuasTanah(props) {
 
   return (
     // Luas Tanah
-    <div className="flex flex-row justify-between items-center">
+    <div className="flex flex-row w-[75%] mx-auto justify-between items-center">
       <div className="ml-7">Luas tanah</div>
       {/* Luas Tanah Min Max */}
       <div className="flex justify-center items-center mr-12">
         <input
-         className="h-5 pl-2 w-24"
+          className="h-5 pl-2 w-24"
           type="number"
           placeholder="Min."
           value={minVal}
@@ -26,7 +26,7 @@ export default function LuasTanah(props) {
         />
         <h2>-</h2>
         <input
-        className="h-5 pl-2 w-24"
+          className="h-5 pl-2 w-24"
           type="number"
           placeholder="Max."
           value={maxVal}

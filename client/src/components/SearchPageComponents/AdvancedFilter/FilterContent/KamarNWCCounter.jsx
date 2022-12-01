@@ -1,5 +1,5 @@
 import React from "react";
-import {BiBed, BiBath} from "react-icons/bi"
+import { BiBed, BiBath } from "react-icons/bi";
 
 export default function KamarNWCCounter(props) {
   const { kamarCounter, wCCounter, setKamarCounter, setWCCounter } = props;
@@ -44,17 +44,25 @@ export default function KamarNWCCounter(props) {
         {/* Kamar Input */}
         <div className="flex justify-center items-center">
           {/* Button */}
-          <button className="flex bg-primary5 text-white text-3xl w-8 h-8 items-center justify-center rounded-[50%] border-[2px] border-primary5 border-solid cursor-pointer hover:bg-primary4" onClick={onKamarMinusClick}>
-            -
+          <button
+            className="flex bg-primary5 text-white text-3xl w-8 h-8 items-center justify-center rounded-[50%] border-[2px] border-primary5 border-solid cursor-pointer hover:bg-primary4"
+            onClick={onKamarMinusClick}
+          >
+            <p className="-translate-y-[2px]">-</p>
           </button>
           {/* Jumlah Kamar */}
           <div className="flex flex-row justify-center items-center ml-3">
-            <BiBed size={"40px"} color={"white"}/>
-            <h2 className="break-keep p-4 w-10 whitespace-nowrap">x {kamarCounter}</h2>
+            <BiBed size={"40px"} color={"black"} />
+            <h2 className="break-keep p-4 w-10 whitespace-nowrap">
+              x {kamarCounter}
+            </h2>
           </div>
           {/* Button */}
-          <button className="flex bg-primary5 text-white text-3xl w-8 h-8 items-center justify-center rounded-[50%] border-[2px] border-primary5 border-solid cursor-pointer hover:bg-primary4" onClick={onKamarPlusClick}>
-            +
+          <button
+            className="flex bg-primary5 text-white text-3xl w-8 h-8 items-center justify-center rounded-[50%] border-[2px] border-primary5 border-solid cursor-pointer hover:bg-primary4"
+            onClick={onKamarPlusClick}
+          >
+            <p className="-translate-y-[3px]">+</p>
           </button>
         </div>
       </div>
@@ -63,17 +71,25 @@ export default function KamarNWCCounter(props) {
         <div className="font-[600]">Jumlah Kamar Mandi:</div>
         <div className="flex justify-center items-center">
           {/* Button */}
-          <button className="flex bg-primary5 text-white text-3xl w-8 h-8 items-center justify-center rounded-[50%] border-[2px] border-primary5 border-solid cursor-pointer hover:bg-primary4" onClick={onWCMinusClick}>
-            -
+          <button
+            className="flex bg-primary5 text-white text-3xl w-8 h-8 items-center justify-center rounded-[50%] border-[2px] border-primary5 border-solid cursor-pointer hover:bg-primary4"
+            onClick={onWCMinusClick}
+          >
+            <p className="-translate-y-[2px]">-</p>
           </button>
           {/* Jumlah WC */}
           <div className="flex flex-row justify-center items-center ml-2">
-            <BiBath size={"40px"} color={"white"}/>
-            <h2 className="break-keep p-4 w-10 whitespace-nowrap">x {wCCounter}</h2>
+            <BiBath size={"40px"} color={"black"} />
+            <h2 className="break-keep p-4 w-10 whitespace-nowrap">
+              x {wCCounter}
+            </h2>
           </div>
           {/* Button */}
-          <button className="flex bg-primary5 text-white text-3xl w-8 h-8 items-center justify-center rounded-[50%] border-[2px] border-primary5 border-solid cursor-pointer hover:bg-primary4" onClick={onWCPlusClick}>
-            +
+          <button
+            className="flex bg-primary5 text-white text-3xl w-8 h-8 items-center justify-center rounded-[50%] border-[2px] border-primary5 border-solid cursor-pointer hover:bg-primary4"
+            onClick={onWCPlusClick}
+          >
+            <p className="-translate-y-[3px]">+</p>
           </button>
         </div>
       </div>
