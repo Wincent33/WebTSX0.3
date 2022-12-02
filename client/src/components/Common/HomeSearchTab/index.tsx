@@ -147,7 +147,10 @@ export default function HomeSearchTabs() {
                         className="location"
                         // key={item.id}
                         onClick={() => {
-                          onSearchListClick(item.kabupaten);
+                          // onSearchListClick(item.kabupaten+","+"");
+                          onSearchListClick(
+                            `${item.kabupaten}, ${item.provinsi} `
+                          );
                         }}
                       >
                         {`${item.kabupaten}, ${item.provinsi}`}
@@ -169,7 +172,9 @@ export default function HomeSearchTabs() {
                         className="location"
                         // key={item.id}
                         onClick={() => {
-                          onSearchListClick(item.kecamatan);
+                          onSearchListClick(
+                            `${item.kecamatan}, ${item.kabupaten}, ${item.provinsi} `
+                          );
                         }}
                       >
                         {`${item.kecamatan}, ${item.kabupaten}, ${item.provinsi}`}

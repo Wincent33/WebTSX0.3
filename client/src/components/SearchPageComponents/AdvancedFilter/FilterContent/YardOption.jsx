@@ -8,7 +8,7 @@ const YardOption = (props) => {
     setIsYard(checked);
   };
   return (
-    <div className="mt-[80px] mx-[50px]">
+    <div className="flex flex-row w-[75%] justify-between mx-auto">
       <div className="yard-text">Yard?</div>
       <div className="yard-toggle">
         <Switch onChange={handleChange} checked={isYard} />

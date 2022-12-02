@@ -4,9 +4,9 @@ import FurnishedOption from "./FurnishedOption";
 import LuasBangunan from "./LuasBangunan";
 import LuasTanah from "./LuasTanah";
 import KamarNWCCounter from "./KamarNWCCounter";
-// import Fasilitas from ".";
-// import ZonaInteraksi from "./ZonaInteraksi";
-// import YardOption from "./YardOption";
+import Fasilitas from "./Fasilitas";
+import ZonaInteraksi from "./ZonaInteraksi";
+import YardOption from "./YardOption";
 import BeliSewa from "./BeliSewa";
 import JenisProperti from "./JenisProperti";
 import Lokasi from "./Lokasi";
@@ -39,9 +39,9 @@ export default function FilterContent() {
   const [maxLTValue, setMaxLTValue] = useState("");
   const [kamarValue, setKamarValue] = useState(0);
   const [wCValue, setWCValue] = useState(0);
-  // const [fasilitasValue, setFasilitasValue] = useState([]);
-  // const [zonaValue, setZonaValue] = useState("");
-  // const [yardValue, setYardValue] = useState(false);
+  const [fasilitasValue, setFasilitasValue] = useState([]);
+  const [zonaValue, setZonaValue] = useState("");
+  const [yardValue, setYardValue] = useState(false);
   return (
     <form onSubmit={handleSubmit} className="m-0 flex flex-col z-50">
       {/* Beli Sewa Tabs */}
@@ -81,21 +81,15 @@ export default function FilterContent() {
         wCCounter={wCValue}
         setWCCounter={setWCValue}
       />
-      {/* <div className="filter-fasilitas">
-        <Fasilitas
-          selectedOptions={fasilitasValue}
-          setSelectedOptions={setFasilitasValue}
-        />
-      </div> */}
-      {/* <div className="filter-zona">
-        <ZonaInteraksi
-          selectedOptions={zonaValue}
-          setSelectedOptions={setZonaValue}
-        />
-      </div> */}
-      {/* <div className="filter-yard">
-        <YardOption isYard={yardValue} setIsYard={setYardValue} />
-      </div> */}
+      <Fasilitas
+        selectedOptions={fasilitasValue}
+        setSelectedOptions={setFasilitasValue}
+      />
+      <ZonaInteraksi
+        selectedOptions={zonaValue}
+        setSelectedOptions={setZonaValue}
+      />
+      <YardOption isYard={yardValue} setIsYard={setYardValue} />
       {/* <div className="submit-data">
         <h3>sewa/Beli : {beliSewaValue}</h3>
         <h3>lokasi :{lokasiValue}</h3>
@@ -117,7 +111,11 @@ export default function FilterContent() {
         <h3>Yard :{yardValue.toString()}</h3>
       </div> */}
 
-      <button type="submit" className="Search-filter" onClick={() => {}}>
+      <button
+        type="submit"
+        className="w-[75%] h-14 bg-primary4 text-3xl text-white mx-auto rounded-3xl"
+        onClick={() => {}}
+      >
         Submit
       </button>
     </form>

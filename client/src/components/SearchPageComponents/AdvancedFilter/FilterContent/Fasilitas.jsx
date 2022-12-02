@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.scss";
 import Select from "react-select";
 
 const options = [
@@ -20,9 +19,10 @@ const Fasilitas = (props) => {
     setSelectedOptions(e);
   };
   return (
-    <div className="mt-[80px] mx-[50px] flex flex-row justify-between">
-      <h3>Fasilitas</h3>
+    <div className="mx-auto w-[75%] flex flex-row justify-between">
+      <h3 className="my-auto">Fasilitas</h3>
       <Select
+        className="m-0 w-[50%]"
         options={options}
         isMulti={true}
         onChange={handleSelectedOptionsOnChange}
