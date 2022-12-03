@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Select from "react-select";
-import JenisPropertiOption from "../../../assets/data/JenisPropertiOption.json"
-import HargaOption from "../../../assets/data/HargaOption.json"
+import JenisPropertiOption from "../../../assets/data/JenisPropertiOption.json";
+import HargaOption from "../../../assets/data/HargaOption.json";
 function QuickFilters() {
   const [jenisValue, setJenisValue] = useState("");
 
@@ -34,48 +34,50 @@ function QuickFilters() {
 
   return (
     // Quick Filter
-    <div className="flex flex-row items-center gap-3 px-12">
-      {/* Jenis Properti */}
-      <div className="flex items-center">
-        <Select
-          options={JenisPropertiOption}
-          isClearable={true}
-          placeholder={"Semua Jenis"}
-        />
-        {/* <select value={jenisValue} onChange={(e)=>setJenisValue(e.target.value)}>
+    <div className="max-w-[1200px] w-full py-2 bg-white">
+      <div className="flex flex-row mx-auto items-center gap-3 w-full ">
+        {/* Jenis Properti */}
+        <div className="flex items-center">
+          <Select
+            options={JenisPropertiOption}
+            isClearable={true}
+            placeholder={"Semua Jenis"}
+          />
+          {/* <select value={jenisValue} onChange={(e)=>setJenisValue(e.target.value)}>
         <option value="semuaJenis">Semua Jenis</option>
           <option value="grapefruit">Grapefruit</option>
           <option value="lime">Lime</option>
           <option value="coconut">Coconut</option>
           <option value="mango">Mango</option>
         </select> */}
-      </div>
-      <label>|</label>
-      {/* Harga Filter */}
-      <div className="flex flex-row items-center">
-        <div className="harga-min">
+        </div>
+        <label className="text-xl text-[gray]">|</label>
+        {/* Harga Filter */}
+        <div className="flex flex-row items-center">
+          <div className="harga-min">
+            <Select
+              options={HargaOption}
+              isClearable={true}
+              placeholder={"Min Harga"}
+            />
+          </div>
+          <label className="text-xl mx-2 text-[gray]">-</label>
+          <div className="harga-max">
+            <Select
+              options={HargaOption}
+              isClearable={true}
+              placeholder={"Max Harga"}
+            />
+          </div>
+        </div>
+        <label className="text-xl text-[gray]">|</label>
+        <div className="kamar-filter">
           <Select
-            options={HargaOption}
+            options={kamarOption}
             isClearable={true}
-            placeholder={"Min Harga"}
+            placeholder={"jumlah kamar"}
           />
         </div>
-        -
-        <div className="harga-max">
-          <Select
-            options={HargaOption}
-            isClearable={true}
-            placeholder={"Max Harga"}
-          />
-        </div>
-      </div>
-      <label>|</label>
-      <div className="kamar-filter">
-        <Select
-          options={kamarOption}
-          isClearable={true}
-          placeholder={"jumlah kamar"}
-        />
       </div>
     </div>
   );

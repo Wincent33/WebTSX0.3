@@ -26,14 +26,14 @@ function Search1() {
 
   return (
     // Search 1
-    <>
-      <div className="flex flex-col w-full sticky top-0 bottom-2">
+    <div className="w-full bg-white">
+      <div className="flex flex-col max-w-[1200px] w-full mx-auto ">
         {/* SearchBar */}
-        <div className="flex flex-row w-full bg-primary1">
+        <div className="flex flex-row w-full bg-white">
           <SearchBar />
           {/* Advanced Filter Button */}
           <button
-            className="bg-transparent border-white border-solid border-[2px] rounded-2xl text-white duration-300 hover:scale-110 hover:cursor-pointer hover:bg-primary4 hover:shadow-[10px_17px_21px_-2px_rgba(0,0,0,67%)]"
+            className="bg-primary1 px-3 rounded-lg my-1 text-white font-medium text-xl duration-300 hover:scale-110 hover:cursor-pointer hover:bg-primary4 hover:shadow-[10px_17px_21px_-2px_rgba(0,0,0,67%)]"
             onClick={() => {
               setTrigger(true);
               console.log("pressed" + trigger);
@@ -43,9 +43,9 @@ function Search1() {
           </button>
         </div>
         <QuickFilters />
+        <AdvancedFilter trigger={trigger} setTrigger={setTrigger} />
       </div>
-      <AdvancedFilter trigger={trigger} setTrigger={setTrigger} />
-    </>
+    </div>
   );
 }
 

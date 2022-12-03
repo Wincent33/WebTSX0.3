@@ -59,17 +59,17 @@ const SearchBar = () => {
     // Advanced SearchBar
     <section className="m-0">
       {/* Search Box */}
-      <div className="flex justify-start bg-primary1 py-1 px-12">
+      <div className="flex justify-start bg-white py-1">
         {/* Search GIF */}
         <img
-          className="h-10 w-10 rounded-l-lg"
+          className="h-10 w-10 rounded-l-lg border-r-primary1 border-y-primary1 border-solid border-[1px] border-r-0"
           src={SearchGIF}
           alt="gif"
           height={"50px"}
         />
         {/* Search Text */}
         <input
-          className="w-[500px] h-10 border-none outline-none p-0 text-xl capitalize"
+          className="w-[500px] h-10 outline-none p-0 text-xl capitalize border-y-primary1 border-solid border-[1px] border-x-0"
           type="text"
           placeholder="Ketik Lokasi..."
           value={value}
@@ -77,9 +77,9 @@ const SearchBar = () => {
           ref={inputRef}
         />
         {/* Search Button Bg */}
-        <div className="m-0 h-10 flex bg-white items-center rounded-r-lg ">
+        <div className="m-0 h-10 flex bg-white items-center rounded-r-lg border-y-primary1 border-solid border-[1px] border-l-0">
           {/* Search Button */}
-          <button className="rounded-lg h-7 w-20 mr-1 bg-primary5 text-white font-semibold border-primary5 border-[2px] hover:bg-primary4 hover:translate-y-[1px] hover:translate-x-[1px]">
+          <button className="rounded-lg h-7 w-20 mr-1 bg-primary1 text-white font-semibold border-primary5 border-[2px] hover:bg-primary4 hover:translate-y-[1px] hover:translate-x-[1px]">
             CARI
           </button>
         </div>

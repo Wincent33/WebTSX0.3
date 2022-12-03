@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// import "../../Assets/Styles/Global/Cards.scss";
-import "./style.scss";
 import { AiOutlineCalculator, AiOutlineCamera } from "react-icons/ai";
 import { BiBed, BiBath, BiCar } from "react-icons/bi";
 import { BsWhatsapp, BsTelephone } from "react-icons/bs";
@@ -39,11 +37,11 @@ export default function PropertyCards(props: any) {
   // console.log(props);
   return (
     // Property Cards
-    <div className="flex flex-col items-center gap-1 rounded-[40px] m-2 py-5 px-0 w-[450px] max-h-[700px]">
+    <div className="flex flex-col items-center gap-1 m-2 py-5 px-0 w-[500px] max-h-[700px]">
       {/* Top Card */}
-      <div className="flex justify-between rounded-tl-2xl w-[400px] border-solid border-[1px] border-primary5">
+      <div className="flex justify-between rounded-t-2xl w-[28rem] h-24 border-solid border-[1px] border-primary5">
         {/* Property Logo */}
-        <div className="max-h-14 mt-5 mr-2 mb-2 ml-4 max-w-[200px]">
+        <div className="max-h-14 my-auto mr-2 ml-4 max-w-[200px]">
           <img
             className="object-cover"
             src={props.devLogo}
@@ -51,7 +49,7 @@ export default function PropertyCards(props: any) {
           />
         </div>
         {/* Top Harga */}
-        <div className="mt-2 mr-5 mb-1 ml-0 flex flex-col items-center gap-1">
+        <div className="my-auto mr-5 ml-0 flex flex-col items-start gap-1">
           <h1 className="m-0 text-primary5 text-2xl font-extrabold">
             {props.harga}
           </h1>
@@ -88,38 +86,38 @@ export default function PropertyCards(props: any) {
         </div>
       </div>
       {/* Mid Card */}
-      <div className="w-[400px] flex justify-between border-solid border-primary5 border-[1px]">
+      <div className="w-[28rem] flex justify-between border-solid border-primary5 border-[1px]">
         {/* Mid Card Info */}
         <div className="flex flex-col">
-          <h2 className="text-xl m-0 ml-2 text-primary5 hover:underline hover:cursor-pointer">
+          <h2 className="ml-3 font-bold text-2xl text-primary5 hover:underline hover:cursor-pointer">
             {props.judul}
           </h2>
-          <p className="m-0 ml-2 flex hover:underline hover:cursor-pointer">
+          <p className="ml-3 flex hover:underline hover:cursor-pointer">
             {props.kecamatanValue}, {props.kabupatenValue},{" "}
             {props.provinsiValue}
           </p>
           {/* Card Info Tags */}
           <div className="flex justify-start gap-x-2 mt-2 ml-2">
             {/* Card Info Tags Content */}
-            <div className="flex items-center bg-primary5 justify-center py-1 px-2 text-white rounded-3xl font-normal gap-1 ">
-              <BiBed color={"white"} size={"60px"} />
+            <div className="flex items-center bg-primary1 justify-center py-1 px-4 text-white rounded-3xl font-bold text-xl gap-2">
+              <BiBed color={"white"} size={"2rem"} />
               <h5 className="items-center m-0 justify-center flex ">
                 {props.jumlahKamar}
               </h5>
             </div>
-            <div className="flex items-center bg-primary5 justify-center py-1 px-2 text-white rounded-3xl font-normal gap-1 ">
-              <BiBath color={"white"} size={"60px"} />
+            <div className="flex items-center bg-primary1 justify-center py-1 px-4 text-white rounded-3xl font-bold text-xl gap-2">
+              <BiBath color={"white"} size={"2rem"} />
               <h5 className="items-center m-0 justify-center flex ">
                 {props.jumlahWC}
               </h5>
             </div>
-            <div className="flex items-center bg-primary5 justify-center py-1 px-2 text-white rounded-3xl font-normal gap-1 ">
-              <BiCar color={"white"} size={"60px"} />
+            <div className="flex items-center bg-primary1 justify-center py-1 px-4 text-white rounded-3xl font-bold text-xl gap-2">
+              <BiCar color={"white"} size={"2rem"} />
               <h5 className="items-center m-0 justify-center flex ">
                 {props.jumlahParkir}
               </h5>
             </div>
-            <div className="flex items-center bg-primary5 justify-center py-1 px-2 text-white rounded-3xl font-normal gap-1 ">
+            <div className="flex items-center bg-primary1 justify-center py-1 px-4 text-white rounded-3xl font-bold text-xl gap-2">
               <h5 className="items-center m-0 justify-center flex ">
                 {props.jumlahLantai} lt
               </h5>
@@ -127,29 +125,29 @@ export default function PropertyCards(props: any) {
           </div>
           {/* Card-LuasTanah-LuasBangunan */}
           <div className="flex gap-5 ml-4">
-            <h5 className="m-0 font-extrabold text-primary5">
+            <h5 className="m-0 font-extrabold text-xl text-primary5">
               LT: {props.luasTanah} m<sup>2</sup>
             </h5>
-            <h5 className="m-0 font-extrabold text-primary5">
+            <h5 className="m-0 font-extrabold text-xl text-primary5">
               LB: {props.luasBangunan} m<sup>2</sup>
             </h5>
           </div>
         </div>
         {/* Simulator KPR Btn */}
-        <div className="flex flex-col justify-center items-center bg-primary5 h-full gap-1 px-2 hover:bg-primary4 hover:cursor-pointer">
+        <div className="flex flex-col justify-center items-center bg-primary1 duration-300 h-full gap-1 px-2 hover:bg-primary4 hover:cursor-pointer">
           <AiOutlineCalculator size={"40px"} color={"white"} />
           <h5 className="text-white m-0">Kalkulator</h5>
           <h5 className="text-white m-0"> KPR</h5>
         </div>
       </div>
       {/* Bot Card */}
-      <div className="w-[400px] flex rounded-b-[20px] border-[1px] border-solid border-primary5 justify-between">
+      <div className="w-[28rem] flex rounded-b-[20px] border-[1px] border-solid border-primary5 justify-between">
         {/* Seller Img Info */}
-        <div className="px-4 flex gap-4">
+        <div className="flex">
           {/* Seller Pics */}
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center w-16 h-16">
             <img
-              className="rounded-[50px] w-12 h-12"
+              className="w-14 h-14 object-cover"
               src={SellerPhotoSrc}
               alt="seller"
             />

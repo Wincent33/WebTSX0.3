@@ -106,11 +106,23 @@ const PriceRangeSlider = (props: any) => {
               onChange={handleChange1}
               valueLabelDisplay="off"
               sx={{
+                "	.MuiSlider-colorSecondary": {
+                  backgroundColor: "#ee6c4d",
+                  color: "#ee6c4d",
+                },
                 ".MuiSlider-rail": { backgroundColor: "black" },
                 ".MuiSlider-track": { color: "#ee6c4d" },
-                ".MuiSlider-thumb": { color: "#ee6c4d" },
+                ".MuiSlider-thumb": {
+                  color: "#ee6c4d",
+                  "&:hover, &.Mui-focusVisible": {
+                    boxShadow: "0px 0px 0px 8px rgba(238, 108, 77, 0.16)",
+                  },
+                  "&.Mui-active": {
+                    boxShadow: "0px 0px 0px 14px rgba(238, 108, 77, 0.16)",
+                  },
+                },
                 ".Mui-focusVisible": { color: "#ee6c4d" },
-                "	.MuiSlider-markLabel": {
+                ".MuiSlider-markLabel": {
                   fontSize: 16,
                   fontWeight: "800",
                   overflow: "hidden",
@@ -120,7 +132,7 @@ const PriceRangeSlider = (props: any) => {
                   textAlign: "center",
                   whiteSpace: "normal",
                 },
-                "	.MuiSlider-mark": {
+                ".MuiSlider-mark": {
                   height: "5px",
                   width: "5px",
                   borderRadius: "5px",
