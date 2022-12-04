@@ -6,7 +6,7 @@ import MenuItem from "@mui/material/MenuItem";
 const BanyakKredit = require("./banyakKredit.json");
 const LamaCicilan = require("./lamaCicilan.json");
 const Pekerjaan = require("./pekerjaan.json");
-const SurveyKPRT = () => {
+const SurveyKPR = () => {
   const [dpValue, setDpValue] = useState("tidak ada");
   const handleDpChange = (event: React.SyntheticEvent, newValue: string) => {
     setDpValue(newValue);
@@ -209,8 +209,8 @@ const SurveyKPRT = () => {
       <div className="m-auto w-[500px]">
         <p className="text-[gray]">
           Dengan klik tombol di bawah ini, Anda menyetujui Syarat dan Ketentuan
-          serta Kebijakan Privasi Pinhome yang berlaku. Data dan informasi Anda
-          tidak akan disebarluaskan tanpa persetujuan Anda.
+          serta Kebijakan Privasi yang berlaku. Data dan informasi Anda tidak
+          akan disebarluaskan tanpa persetujuan Anda.
         </p>
         <button className="w-[500px] h-[50px]">Lihat Kemampuan Anda</button>
       </div>
@@ -218,4 +218,4 @@ const SurveyKPRT = () => {
   );
 };
 
-export default SurveyKPRT;
+export default SurveyKPR;

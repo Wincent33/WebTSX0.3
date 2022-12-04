@@ -3,8 +3,8 @@ import MovingBackground from "../components/Common/MovingBackground";
 import NavBar from "../components/Common/NavBar/NavBar";
 import AuthLoggedOut from "../components/Common/AuthLoggedOut";
 import KPRHero from "../components/KPRPageComponents/KPRHero";
-import SurveyKPR from "../components/KPRPageComponents/SurveyKPR";
-import SurveyKPRT from "../components/KPRPageComponents/SurveyKPR/IndexT";
+// import SurveyKPR from "../components/KPRPageComponents/SurveyKPR";
+import SurveyKPR from "../components/KPRPageComponents/SurveyKPR/SurveyKPR";
 const KPRPage = () => {
   return (
     <div className="flex flex-col">
@@ -18,7 +18,7 @@ const KPRPage = () => {
         <KPRHero />
       </div>
       <div className="bg-white">
-        <SurveyKPRT />
+        <SurveyKPR />
       </div>
     </div>
   );

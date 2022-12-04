@@ -5,6 +5,7 @@ import DetailPage from "./pages/DetailPage";
 import DashBoard from "./pages/DashBoard";
 import KPRPage from "./pages/KPRPage";
 import SearchPage from "./pages/SearchPage";
+import InputPage from "./pages/InputPage";
 function App() {
   return (
     <BrowserRouter>
@@ -12,9 +13,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/detail" element={<DetailPage />} />
         <Route path="/search" element={<SearchPage />} />
-        {/*
         <Route path="/input" element={<InputPage />} />
-      */}
         <Route path="/simulasi-kpr" element={<KPRPage />} />
         <Route path="/dashboard/*" element={<DashBoard />} />
       </Routes>
