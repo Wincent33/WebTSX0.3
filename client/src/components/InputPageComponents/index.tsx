@@ -4,7 +4,7 @@ import ReviewPopUP from "./ReviewPopUpContent";
 import Judul from "./components/Judul";
 import NamaProperti from "./components/NamaProperti";
 import Deskripsi from "./components/Deskripsi";
-import Developer from "./components/Developer";
+import Developer from "./components/Developer.jsx";
 import JenisProperti from "./components/JenisProperti";
 import Harga from "./components/Harga";
 import JenisSertifikat from "./components/JenisSertifikat";
