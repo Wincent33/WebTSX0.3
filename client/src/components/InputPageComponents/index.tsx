@@ -70,6 +70,19 @@ const InputForm = () => {
     return splitStr.join(" ");
   }
 
+  const AlamatDiscipline = () => {
+    if (formValue.kabupaten.value !== "") {
+      return (
+        <KecamatanSelect formValue={formValue} setFormValue={setFormValue} />
+      );
+    }
+    if (formValue.provinsi.value !== "") {
+      return (
+        <KabupatenSelect formValue={formValue} setFormValue={setFormValue} />
+      );
+    } else return <></>;
+  };
+
   return (
     <div className="w-full">
       <form className="flex flex-row justify-between">
@@ -83,14 +96,7 @@ const InputForm = () => {
           <div className="alamat">
             <Lokasi formValue={formValue} setFormValue={setFormValue} />
             <ProvinsiSelect formValue={formValue} setFormValue={setFormValue} />
-            <KabupatenSelect
-              formValue={formValue}
-              setFormValue={setFormValue}
-            />
-            <KecamatanSelect
-              formValue={formValue}
-              setFormValue={setFormValue}
-            />
+            <AlamatDiscipline />
           </div>
           <JenisProperti formValue={formValue} setFormValue={setFormValue} />
           <Harga formValue={formValue} setFormValue={setFormValue} />

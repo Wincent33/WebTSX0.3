@@ -32,7 +32,6 @@ const ProvinsiSelect = (props) => {
     console.log("Left the Focus");
     setIsFocused(false);
   };
-  console.log(!formValue ? formValue.provinsi : null);
   return (
     <div className="provinsi">
       <label
@@ -48,7 +47,7 @@ const ProvinsiSelect = (props) => {
         onFocus={handleFocus}
         onBlur={handleBlur}
         name="provinsi"
-        value={formValue.provinsi}
+        value={formValue.provinsi.value !== "" ? formValue.provinsi : null}
         onChange={handleOnChange}
         options={fetchProvinsi}
         placeholder={"Pilih Salah Satu..."}
