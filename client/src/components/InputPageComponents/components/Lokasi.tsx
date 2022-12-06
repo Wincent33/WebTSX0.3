@@ -1,21 +1,21 @@
 import { TextField } from "@mui/material";
-const Deskripsi = (props: any) => {
+
+const Lokasi = (props: any) => {
   const { formValue, setFormValue } = props;
+
   const handleOnChange = (e: any) => {
     let updatedValue = {};
-    updatedValue = { deskripsiProperti: e.target.value };
+    updatedValue = { alamat: e.target.value };
     setFormValue((prev: any) => ({ ...prev, ...updatedValue }));
   };
   return (
     <div className="flex items-center">
       <TextField
         className="w-full"
-        label="Deskripsi Properti"
-        variant="outlined"
-        value={formValue.deskripsiProperti}
+        label="Alamat"
+        value={formValue.alamat}
         onChange={handleOnChange}
-        rows={"6"}
-        multiline
+        required
         sx={{
           "& label.Mui-focused": { color: "#ee6c4d" },
           "& .MuiOutlinedInput-root": {
@@ -24,10 +24,9 @@ const Deskripsi = (props: any) => {
             },
           },
         }}
-        required
       />
     </div>
   );
 };
 
-export default Deskripsi;
+export default Lokasi;

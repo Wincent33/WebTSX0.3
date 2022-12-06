@@ -17,6 +17,14 @@ const Judul = (props: any) => {
         value={formValue.judul}
         onChange={handleOnChange}
         required
+        sx={{
+          "& label.Mui-focused": { color: "#ee6c4d" },
+          "& .MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+              borderColor: "#ee6c4d",
+            },
+          },
+        }}
       />
     </div>
   );
