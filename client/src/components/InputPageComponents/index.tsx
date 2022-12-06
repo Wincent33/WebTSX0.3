@@ -9,7 +9,7 @@ import JenisProperti from "./components/JenisProperti";
 import Harga from "./components/Harga";
 import JenisSertifikat from "./components/JenisSertifikat";
 import Furnished from "./components/Furnished";
-import ProvinsiSelect from "./components/ProvinsiSelect";
+import ProvinsiSelect from "./components/ProvinsiSelect.jsx";
 import KabupatenSelect from "./components/KabupatenSelect";
 import KecamatanSelect from "./components/KecamatanSelect";
 import LTLB from "./components/LTLB";
@@ -66,6 +66,7 @@ const InputForm = () => {
       splitStr[i] =
         splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
     }
+
     return splitStr.join(" ");
   }
 
