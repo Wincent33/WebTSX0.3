@@ -30,17 +30,18 @@ const Developer = (props) => {
     setIsFocused(false);
   };
   return (
-    <div className="z-30">
+    <div>
       <label
         className={
           isFocused
-            ? "absolute text-xs px-1 text-primary4 bg-white translate-x-3 -translate-y-2 z-20"
-            : "absolute text-xs px-1 text-[grey] bg-white translate-x-3 -translate-y-2 z-20"
+            ? "absolute text-xs px-1 text-primary4 bg-white translate-x-3 -translate-y-2 z-[70]"
+            : "absolute text-xs px-1 text-[grey] bg-white translate-x-3 -translate-y-2 z-[70]"
         }
       >
         Nama Developer
       </label>
       <Select
+        className="z-[60]"
         onFocus={handleFocus}
         onBlur={handleBlur}
         isClearable={true}

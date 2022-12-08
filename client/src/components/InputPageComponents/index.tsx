@@ -5,13 +5,13 @@ import Judul from "./components/Judul";
 import NamaProperti from "./components/NamaProperti";
 import Deskripsi from "./components/Deskripsi";
 import Developer from "./components/Developer.jsx";
-import JenisProperti from "./components/JenisProperti";
+import JenisProperti from "./components/JenisProperti.jsx";
 import Harga from "./components/Harga";
 import JenisSertifikat from "./components/JenisSertifikat";
 import Furnished from "./components/Furnished";
 import ProvinsiSelect from "./components/ProvinsiSelect.jsx";
-import KabupatenSelect from "./components/KabupatenSelect";
-import KecamatanSelect from "./components/KecamatanSelect";
+import KabupatenSelect from "./components/KabupatenSelect.jsx";
+import KecamatanSelect from "./components/KecamatanSelect.jsx";
 import LTLB from "./components/LTLB";
 import KamarNWcCounter from "./components/KamarNWcCounter";
 import Fasilitas from "./components/Fasilitas";
@@ -70,19 +70,6 @@ const InputForm = () => {
     return splitStr.join(" ");
   }
 
-  const AlamatDiscipline = () => {
-    if (formValue.kabupaten.value !== "") {
-      return (
-        <KecamatanSelect formValue={formValue} setFormValue={setFormValue} />
-      );
-    }
-    if (formValue.provinsi.value !== "") {
-      return (
-        <KabupatenSelect formValue={formValue} setFormValue={setFormValue} />
-      );
-    } else return <></>;
-  };
-
   return (
     <div className="w-full">
       <form className="flex flex-row justify-between">
@@ -96,7 +83,33 @@ const InputForm = () => {
           <div className="alamat">
             <Lokasi formValue={formValue} setFormValue={setFormValue} />
             <ProvinsiSelect formValue={formValue} setFormValue={setFormValue} />
-            <AlamatDiscipline />
+
+            {formValue.provinsi.value !== "" ? (
+              <KabupatenSelect
+                formValue={formValue}
+                setFormValue={setFormValue}
+              />
+            ) : (
+              <></>
+            )}
+
+            {formValue.kabupaten.value !== "" ? (
+              <KecamatanSelect
+                formValue={formValue}
+                setFormValue={setFormValue}
+              />
+            ) : (
+              <></>
+            )}
+
+            {/* <KabupatenSelect
+              formValue={formValue}
+              setFormValue={setFormValue}
+            /> */}
+            {/* <KecamatanSelect
+              formValue={formValue}
+              setFormValue={setFormValue}
+            /> */}
           </div>
           <JenisProperti formValue={formValue} setFormValue={setFormValue} />
           <Harga formValue={formValue} setFormValue={setFormValue} />

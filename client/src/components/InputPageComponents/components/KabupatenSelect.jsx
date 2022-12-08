@@ -1,33 +1,36 @@
 import { useState, useEffect } from "react";
 import Select from "react-select";
-
-const ProvinsiSelect = (props) => {
+const KabupatenSelect = (props) => {
   const { formValue, setFormValue } = props;
-  const [fetchProvinsi, setFetchProvinsi] = useState([]);
+  const [fetchKabupaten, setFetchKabupaten] = useState([]);
   const [isFocused, setIsFocused] = useState(false);
   useEffect(() => {
-    fetch("http://www.emsifa.com/api-wilayah-indonesia/api/provinces.json")
-      .then((res) => res.json())
-      .then((res) => {
-        res.forEach(function (data) {
-          data["value"] = data["id"];
-          delete data["id"];
-          data["label"] = data["name"];
-          delete data["name"];
+    if (Object.values(formValue.provinsi)[0] !== undefined) {
+      fetch(
+        `http://www.emsifa.com/api-wilayah-indonesia/api/regencies/${
+          Object.values(formValue.provinsi)[0]
+        }.json`
+      )
+        .then((res) => res.json())
+        .then((res) => {
+          res.forEach(function (data) {
+            data["value"] = data["id"];
+            delete data["id"];
+            data["label"] = data["name"];
+            delete data["name"];
+          });
+          setFetchKabupaten(res);
         });
-        setFetchProvinsi(res);
-      });
-  }, [setFetchProvinsi]);
+    }
+  }, [formValue.provinsi, setFetchKabupaten]);
 
   const handleOnChange = (e) => {
     let updatedValue = {};
     updatedValue = {
-      provinsi: e,
-      kabupaten: { province_id: "", value: "", label: "" },
+      kabupaten: e,
       kecamatan: { regency_id: "", value: "", label: "" },
     };
     setFormValue((prev) => ({ ...prev, ...updatedValue }));
-    console.log(formValue.provinsi.value);
   };
   const handleFocus = () => {
     setIsFocused(true);
@@ -36,24 +39,24 @@ const ProvinsiSelect = (props) => {
     setIsFocused(false);
   };
   return (
-    <div className="provinsi">
+    <div className="my-2">
       <label
         className={
           isFocused
-            ? "absolute text-xs px-1 text-primary4 bg-white translate-x-3 -translate-y-2 z-50"
-            : "absolute text-xs px-1 text-[grey] bg-white translate-x-3 -translate-y-2 z-50"
+            ? "absolute text-xs px-1 text-primary4 bg-white translate-x-3 -translate-y-2 z-30"
+            : "absolute text-xs px-1 text-[grey] bg-white translate-x-3 -translate-y-2 z-30"
         }
       >
-        Provinsi *
+        Kabupaten *
       </label>
       <Select
-        className="z-40"
+        className="z-20"
         onFocus={handleFocus}
         onBlur={handleBlur}
         name="provinsi"
-        value={formValue.provinsi.value !== "" ? formValue.provinsi : null}
+        value={formValue.kabupaten.value !== "" ? formValue.kabupaten : null}
         onChange={handleOnChange}
-        options={fetchProvinsi}
+        options={fetchKabupaten}
         placeholder={"Pilih Salah Satu..."}
         styles={{
           control: (base, state) => ({
@@ -72,4 +75,4 @@ const ProvinsiSelect = (props) => {
   );
 };
 
-export default ProvinsiSelect;
+export default KabupatenSelect;

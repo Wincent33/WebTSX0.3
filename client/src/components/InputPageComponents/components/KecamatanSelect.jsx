@@ -3,7 +3,7 @@ import Select from "react-select";
 const KecamatanSelect = (props) => {
   const { formValue, setFormValue } = props;
   const [fetchKecamatan, setFetchKecamatan] = useState([]);
-
+  const [isFocused, setIsFocused] = useState(false);
   useEffect(() => {
     if (
       formValue.kabupaten !== null ||
@@ -30,14 +30,44 @@ const KecamatanSelect = (props) => {
     updatedValue = { kecamatan: e };
     setFormValue((prev) => ({ ...prev, ...updatedValue }));
   };
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
   return (
     <div className="kecamatan">
-      <label>kecamatan</label>
+      <label
+        className={
+          isFocused
+            ? "absolute text-xs px-1 text-primary4 bg-white translate-x-3 -translate-y-2 z-10"
+            : "absolute text-xs px-1 text-[grey] bg-white translate-x-3 -translate-y-2 z-10"
+        }
+      >
+        Kecamatan *
+      </label>
       <Select
+        className="z-0"
+        onFocus={handleFocus}
+        onBlur={handleBlur}
         name="kecamatan"
         value={formValue.kecamatan}
         onChange={handleOnChange}
         options={fetchKecamatan}
+        placeholder={"Pilih Salah Satu..."}
+        styles={{
+          control: (base, state) => ({
+            ...base,
+            borderColor: state.isFocused ? "#ee6c4d" : "lightgrey",
+            height: "3.5rem",
+            boxShadow: state.isFocused ? null : null,
+            "&:hover": {
+              // Overwrittes the different states of border
+              borderColor: state.isFocused ? "" : "black",
+            },
+          }),
+        }}
       />
     </div>
   );

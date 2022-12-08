@@ -9,7 +9,7 @@ const Lokasi = (props: any) => {
     setFormValue((prev: any) => ({ ...prev, ...updatedValue }));
   };
   return (
-    <div className="flex items-center">
+    <div className="flex items-center my-2">
       <TextField
         className="w-full"
         label="Alamat"
