@@ -29,27 +29,22 @@ const ProvinsiSelect = (props) => {
     setFormValue((prev) => ({ ...prev, ...updatedValue }));
     console.log(formValue.provinsi.value);
   };
-  const handleFocus = () => {
-    setIsFocused(true);
-  };
-  const handleBlur = () => {
-    setIsFocused(false);
-  };
+
   return (
-    <div className="provinsi">
+    <div>
       <label
         className={
           isFocused
-            ? "absolute text-xs px-1 text-primary4 bg-white translate-x-3 -translate-y-2 z-50"
-            : "absolute text-xs px-1 text-[grey] bg-white translate-x-3 -translate-y-2 z-50"
+            ? "absolute text-xs px-1 text-primary4 bg-white translate-x-3 -translate-y-2 z-[98]"
+            : "absolute text-xs px-1 text-[grey] bg-white translate-x-3 -translate-y-2 z-[98]"
         }
       >
         Provinsi *
       </label>
       <Select
-        className="z-40"
-        onFocus={handleFocus}
-        onBlur={handleBlur}
+        className="z-[97]"
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
         name="provinsi"
         value={formValue.provinsi.value !== "" ? formValue.provinsi : null}
         onChange={handleOnChange}

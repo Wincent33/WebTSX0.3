@@ -1,36 +1,36 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Select from "react-select";
-import JenisPropertiOptions from "../../../assets/data/JenisPropertiOption.json";
-
-const JenisProperti = (props) => {
+import SertifikatOptions from "../../../assets/data/JenisSertifikatOptions.json";
+const JenisSertifikat = (props) => {
   const { formValue, setFormValue } = props;
+
   const [isFocused, setIsFocused] = useState(false);
 
   const handleOnChange = (e) => {
     let updatedValue = {};
-    updatedValue = { jenisProperti: e.value };
+    updatedValue = { jenisSertifikat: e.value };
     setFormValue((prev) => ({ ...prev, ...updatedValue }));
   };
 
   return (
-    <div>
+    <div className="jenis-sertifikat">
       <label
         className={
           isFocused
-            ? "absolute text-xs px-1 text-primary4 bg-white translate-x-3 -translate-y-2 z-[92]"
-            : "absolute text-xs px-1 text-[grey] bg-white translate-x-3 -translate-y-2 z-[92]"
+            ? "absolute text-xs px-1 text-primary4 bg-white translate-x-3 -translate-y-2 z-[90]"
+            : "absolute text-xs px-1 text-[grey] bg-white translate-x-3 -translate-y-2 z-[90]"
         }
       >
-        Jenis Properti *
+        Jenis Sertifikat *
       </label>
       <Select
-        className="z-[91]"
+        className="z-[89]"
+        options={SertifikatOptions}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-        options={JenisPropertiOptions}
-        value={formValue.jenisProperti.value}
+        value={formValue.jenisSertifikat.value}
         onChange={handleOnChange}
-        placeholder={"Pilih Salah Satu..."}
+        placeholder="Pilih Salah Satu..."
         styles={{
           control: (base, state) => ({
             ...base,
@@ -47,4 +47,4 @@ const JenisProperti = (props) => {
   );
 };
 
-export default JenisProperti;
+export default JenisSertifikat;

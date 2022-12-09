@@ -32,27 +32,21 @@ const KabupatenSelect = (props) => {
     };
     setFormValue((prev) => ({ ...prev, ...updatedValue }));
   };
-  const handleFocus = () => {
-    setIsFocused(true);
-  };
-  const handleBlur = () => {
-    setIsFocused(false);
-  };
   return (
     <div className="my-2">
       <label
         className={
           isFocused
-            ? "absolute text-xs px-1 text-primary4 bg-white translate-x-3 -translate-y-2 z-30"
-            : "absolute text-xs px-1 text-[grey] bg-white translate-x-3 -translate-y-2 z-30"
+            ? "absolute text-xs px-1 text-primary4 bg-white translate-x-3 -translate-y-2 z-[96]"
+            : "absolute text-xs px-1 text-[grey] bg-white translate-x-3 -translate-y-2 z-[96]"
         }
       >
         Kabupaten *
       </label>
       <Select
-        className="z-20"
-        onFocus={handleFocus}
-        onBlur={handleBlur}
+        className="z-[95]"
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
         name="provinsi"
         value={formValue.kabupaten.value !== "" ? formValue.kabupaten : null}
         onChange={handleOnChange}

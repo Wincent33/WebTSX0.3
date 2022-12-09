@@ -6,9 +6,9 @@ import NamaProperti from "./components/NamaProperti";
 import Deskripsi from "./components/Deskripsi";
 import Developer from "./components/Developer.jsx";
 import JenisProperti from "./components/JenisProperti.jsx";
-import Harga from "./components/Harga";
-import JenisSertifikat from "./components/JenisSertifikat";
-import Furnished from "./components/Furnished";
+import Harga from "./components/Harga.jsx";
+import JenisSertifikat from "./components/JenisSertifikat.jsx";
+import Furnished from "./components/Furnished.jsx";
 import ProvinsiSelect from "./components/ProvinsiSelect.jsx";
 import KabupatenSelect from "./components/KabupatenSelect.jsx";
 import KecamatanSelect from "./components/KecamatanSelect.jsx";
@@ -42,7 +42,7 @@ const InputForm = () => {
     imagesURLs: [
       "https://images.unsplash.com/photo-1665777916560-60bbcb0ce05b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80",
     ],
-    isFurnished: false,
+    isFurnished: null,
     luasTanah: null,
     luasBangunan: null,
     lantai: 0,
@@ -71,46 +71,34 @@ const InputForm = () => {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full h-[1300px] overflow-hidden">
       <form className="flex flex-row justify-between">
         {/* Form Left */}
-        <div className="ml-5 mt-5 flex flex-col gap-2 w-[50%]">
+        <div className="mx-5 mt-5 flex flex-col gap-2 w-[40%]">
           <BeliSewa formValue={formValue} setFormValue={setFormValue} />
           <Judul formValue={formValue} setFormValue={setFormValue} />
           <NamaProperti formValue={formValue} setFormValue={setFormValue} />
           <Deskripsi formValue={formValue} setFormValue={setFormValue} />
           <Developer formValue={formValue} setFormValue={setFormValue} />
-          <div className="alamat">
-            <Lokasi formValue={formValue} setFormValue={setFormValue} />
-            <ProvinsiSelect formValue={formValue} setFormValue={setFormValue} />
-
-            {formValue.provinsi.value !== "" ? (
-              <KabupatenSelect
-                formValue={formValue}
-                setFormValue={setFormValue}
-              />
-            ) : (
-              <></>
-            )}
-
-            {formValue.kabupaten.value !== "" ? (
-              <KecamatanSelect
-                formValue={formValue}
-                setFormValue={setFormValue}
-              />
-            ) : (
-              <></>
-            )}
-
-            {/* <KabupatenSelect
+          <Lokasi formValue={formValue} setFormValue={setFormValue} />
+          <ProvinsiSelect formValue={formValue} setFormValue={setFormValue} />
+          {formValue.provinsi.value !== "" ? (
+            <KabupatenSelect
               formValue={formValue}
               setFormValue={setFormValue}
-            /> */}
-            {/* <KecamatanSelect
+            />
+          ) : (
+            <></>
+          )}
+
+          {formValue.kabupaten.value !== "" ? (
+            <KecamatanSelect
               formValue={formValue}
               setFormValue={setFormValue}
-            /> */}
-          </div>
+            />
+          ) : (
+            <></>
+          )}
           <JenisProperti formValue={formValue} setFormValue={setFormValue} />
           <Harga formValue={formValue} setFormValue={setFormValue} />
           <JenisSertifikat formValue={formValue} setFormValue={setFormValue} />
@@ -120,7 +108,7 @@ const InputForm = () => {
             setImageURLs={setImageURLs}
           />
         </div>
-        <div className="form-right">
+        <div className="mx-5 mt-5 flex flex-col gap-2 w-[40%]">
           <Furnished formValue={formValue} setFormValue={setFormValue} />
           <ParkirMobil formValue={formValue} setFormValue={setFormValue} />
           <Lantai formValue={formValue} setFormValue={setFormValue} />
