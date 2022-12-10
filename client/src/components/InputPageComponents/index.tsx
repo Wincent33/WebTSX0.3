@@ -20,7 +20,7 @@ import Zona from "./components/Zona";
 import Yard from "./components/Yard";
 import ImagesUpload from "./components/ImagesUpload";
 import Lantai from "./components/Lantai";
-import ParkirMobil from "./components/ParkirMobil";
+import ParkirMobil from "./components/ParkirMobil.jsx";
 import Listrik from "./components/Listrik";
 import BeliSewa from "./components/BeliSewa";
 const InputForm = () => {

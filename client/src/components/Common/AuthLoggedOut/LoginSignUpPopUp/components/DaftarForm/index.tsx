@@ -3,8 +3,8 @@ import { GrGoogle } from "react-icons/gr";
 import { BsFacebook, BsApple, BsKey } from "react-icons/bs";
 import { AiOutlineUser, AiOutlineMail, AiFillWarning } from "react-icons/ai";
 import { submitDaftar } from "../../api/submitAPI";
-import ReactTooltip from "react-tooltip";
 import validateEmail from "../../utils/validateEmail";
+import { Tooltip } from "react-tooltip";
 // import "./style.scss";
 const DaftarForm = ({ setDaftar }: any) => {
   const [daftarValue, setDaftarValue] = useState({
@@ -67,15 +67,14 @@ const DaftarForm = ({ setDaftar }: any) => {
       return (
         <div className="flex ">
           <AiFillWarning
-            data-tip={errorValue}
-            data-for="error"
-            className="static right-0 text-[#de5246] h-[40px] w-[40px]"
-          />
-          <ReactTooltip
-            className="flex justify-center text-center min-w-max"
+            data-content={errorValue}
             id="error"
-            type="error"
-            effect="solid"
+            className="static right-0 text-[#de5246] h-[40px] w-[40px]"
+            data-tooltip-variant="error"
+          />
+          <Tooltip
+            className="flex justify-center text-center min-w-max"
+            anchorId="error"
             place="top"
             getContent={(dataTip: any) => `${dataTip}`}
           />

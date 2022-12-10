@@ -1,22 +1,23 @@
 import React from "react";
 import { BiCar } from "react-icons/bi";
-import Tooltip from "react-tooltip";
-const ParkirMobil = (props: any) => {
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from "react-tooltip";
+const ParkirMobil = (props) => {
   const { formValue, setFormValue } = props;
-  const handleParkirMinus = (e: any) => {
+  const handleParkirMinus = (e) => {
     e.preventDefault();
     if (formValue.parkir > 0) {
       let updatedValue = {};
       updatedValue = { parkir: formValue.parkir - 1 };
-      setFormValue((prev: any) => ({ ...prev, ...updatedValue }));
+      setFormValue((prev) => ({ ...prev, ...updatedValue }));
     }
   };
-  const handleParkirPlus = (e: any) => {
+  const handleParkirPlus = (e) => {
     e.preventDefault();
     if (formValue.parkir < 5) {
       let updatedValue = {};
       updatedValue = { parkir: formValue.parkir + 1 };
-      setFormValue((prev: any) => ({ ...prev, ...updatedValue }));
+      setFormValue((prev) => ({ ...prev, ...updatedValue }));
     }
   };
   return (
@@ -29,8 +30,12 @@ const ParkirMobil = (props: any) => {
           -
         </button>
         <div className="flex flex-row juscen items-center ml-2">
-          <BiCar size={"40px"} color={"black"} />
-          <Tooltip />
+          <BiCar
+            id="parkir"
+            size={"40px"}
+            color={"black"}
+          />
+          <Tooltip anchorId="parkir" place="bottom" content="Hello Nigger"/>
           <h2 className="whitespace-nowrap break-keep"> {formValue.parkir}</h2>
         </div>
         <button

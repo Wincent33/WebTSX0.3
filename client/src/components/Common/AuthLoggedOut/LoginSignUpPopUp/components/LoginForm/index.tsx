@@ -3,7 +3,7 @@ import { GrGoogle } from "react-icons/gr";
 import { BsFacebook, BsApple, BsKey } from "react-icons/bs";
 import { AiOutlineMail, AiFillWarning } from "react-icons/ai";
 // import "./style.scss";
-import ReactTooltip from "react-tooltip";
+import {Tooltip} from "react-tooltip";
 import validateEmail from "../../utils/validateEmail";
 // import { valueContainerCSS } from "react-select/dist/declarations/src/components/containers";
 
@@ -33,22 +33,22 @@ const LoginForm = ({ setDaftar }: any) => {
       return false;
     } else return true;
   };
-  const ErrDesc = ({ errorValue, errState }: any) => {
+  const ErrDesc = ({ errorValue, errState, errId }: any) => {
     if (errState === true) {
       return (
         <div className="flex">
           <AiFillWarning
-            data-tip={errorValue}
-            data-for="error"
+            // data-tip={errorValue}
+            id={errId}
             className="static right-0 text-primary4 h-[40px] w-[40px]"
+            data-tooltip-variant="error"
           />
-          <ReactTooltip
+          <Tooltip
             className="min-w-max flex justify-center text-center"
-            id="error"
-            type="error"
-            effect="solid"
+            anchorId={errId}
             place="top"
-            getContent={(dataTip: any) => `${dataTip}`}
+            // getContent={(dataTip: any) => `${dataTip}`}
+            content={errorValue}
           />
         </div>
       );
@@ -100,7 +100,7 @@ const LoginForm = ({ setDaftar }: any) => {
             className="bg-transparent w-[80%] border-none pl-[10px] text-[16px] font-[600] text-white focus:outline-none placeholder:text-[white]/50 "
           />
         </div>
-        <ErrDesc errorValue={emailErr()} errState={errEmailMsg} />
+        <ErrDesc errId="email" errorValue={emailErr()} errState={errEmailMsg} />
       </div>
       <div className="flex w-[350px] translate-x-[20px] m-[5px]">
         <div className="w-[300px] flex items-center rounded-[20px] h-[40px] bg-primary1">
@@ -114,7 +114,7 @@ const LoginForm = ({ setDaftar }: any) => {
             className="bg-transparent w-[80%] border-none pl-[10px] text-[16px] font-[600] text-white focus:outline-none placeholder:text-[white]/50 "
           />
         </div>
-        <ErrDesc errorValue={passErr()} errState={errPassMsg} />
+        <ErrDesc errId="password" errorValue={passErr()} errState={errPassMsg} />
       </div>
       <div className="flex flex-row mx-0 my-[10px] w-[60%] justify-around">
         <div className="flex flex-row justify-center items-center">
