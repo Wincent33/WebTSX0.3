@@ -39,34 +39,46 @@ const KamarNWcCounter = (props) => {
   };
 
   return (
-    <div className="kamarNWCCounter">
-      <div className="kamar-counter">
+    <div className="flex flex-row justify-start m-1 h-24">
+      <div className="">
         {/* <div className="kamar-text">Jumlah Kamar Tidur:</div> */}
-        <div className="kamar-input">
-          <button className="kamar-btn" onClick={handleKamarMinus}>
+        <div className="flex flex-row items-center h-12">
+          <button
+            className="flex bg-primary5 text-white text-3xl w-8 h-8 justify-center items-center rounded-full border-[2px] border-primary5 border-solid hover:bg-primary4"
+            onClick={handleKamarMinus}
+          >
             -
           </button>
-          <div className="jumlah-kamar">
-            <BiBed size={"50px"} color={"black"} />
+          <div className="flex flex-row items-center font-[600]">
+            <BiBed size={"40px"} color={"black"} />
             <h2>x {formValue.kamarTidur}</h2>
           </div>
-          <button className="kamar-btn" onClick={handleKamarPlus}>
+          <button
+            className="flex bg-primary5 text-white text-3xl w-8 h-8 justify-center items-center rounded-full border-[2px] border-primary5 border-solid hover:bg-primary4"
+            onClick={handleKamarPlus}
+          >
             +
           </button>
         </div>
       </div>
 
-      <div className="wc-counter">
+      <div>
         {/* <div className="wc-text">Jumlah Kamar Mandi:</div> */}
-        <div className="wc-input">
-          <button className="wc-btn" onClick={handleWCMinus}>
+        <div className="flex flex-row items-center h-12">
+          <button
+            className="flex bg-primary5 text-white text-3xl w-8 h-8 justify-center items-center rounded-full border-[2px] border-primary5 border-solid hover:bg-primary4"
+            onClick={handleWCMinus}
+          >
             -
           </button>
-          <div className="jumlah-wc">
-            <BiBath size={"50px"} color={"black"} />
+          <div className="flex flex-row items-center font-[600]">
+            <BiBath size={"40px"} color={"black"} />
             <h2>x {formValue.kamarMandi}</h2>
           </div>
-          <button className="wc-btn" onClick={handleWCPlus}>
+          <button
+            className="flex bg-primary5 text-white text-3xl w-8 h-8 justify-center items-center rounded-full border-[2px] border-primary5 border-solid hover:bg-primary4"
+            onClick={handleWCPlus}
+          >
             +
           </button>
         </div>

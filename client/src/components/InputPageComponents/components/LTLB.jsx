@@ -1,5 +1,5 @@
 import { NumericFormat } from "react-number-format";
-
+import { TextField } from "@mui/material";
 const LTLB = (props) => {
   const { formValue, setFormValue } = props;
 
@@ -16,43 +16,73 @@ const LTLB = (props) => {
   };
 
   return (
-    <div className="LTLB">
-      <h3>LT |</h3>
+    <div className="flex flex-row w-full justify-around">
       <NumericFormat
+        className="w-[40%]"
+        decimalSeparator=","
         displayType="number"
+        label="Luas Tanah"
+        required
         value={formValue.luasTanah}
         onChange={handleOnChangeLt}
-        defaultValue={null}
-        placeholder={0}
+        InputProps={{
+          endAdornment: (
+            <p className="text-[gray]">
+              m<sup>2</sup>
+            </p>
+          ),
+        }}
+        defaultValue={0}
         allowLeadingZeros={false}
         allowNegative={false}
         maxLength={3}
+        customInput={TextField}
+        sx={{
+          "& label.Mui-focused": { color: "#ee6c4d" },
+          "& .MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+              borderColor: "#ee6c4d",
+            },
+          },
+        }}
         isAllowed={(values) => {
           const { value } = values;
           return value >= 0;
         }}
       />
-      <h5>
-        m<sup>2</sup>
-      </h5>
-      <h3>LB |</h3>
       <NumericFormat
+        className="w-[40%]"
+        decimalSeparator=","
         displayType="number"
+        label="Luas Tanah"
+        required
         value={formValue.luasBangunan}
         onChange={handleOnChangeLb}
-        defaultValue={null}
-        placeholder={0}
+        InputProps={{
+          endAdornment: (
+            <p className="text-[gray]">
+              m<sup>2</sup>
+            </p>
+          ),
+        }}
+        defaultValue={0}
         allowLeadingZeros={false}
         allowNegative={false}
         maxLength={3}
+        customInput={TextField}
+        sx={{
+          "& label.Mui-focused": { color: "#ee6c4d" },
+          "& .MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+              borderColor: "#ee6c4d",
+            },
+          },
+        }}
         isAllowed={(values) => {
           const { value } = values;
           return value >= 0;
         }}
       />
-      <h5>
-        m<sup>2</sup>
-      </h5>
     </div>
   );
 };

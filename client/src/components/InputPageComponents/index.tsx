@@ -12,15 +12,12 @@ import Furnished from "./components/Furnished.jsx";
 import ProvinsiSelect from "./components/ProvinsiSelect.jsx";
 import KabupatenSelect from "./components/KabupatenSelect.jsx";
 import KecamatanSelect from "./components/KecamatanSelect.jsx";
-import LTLB from "./components/LTLB";
-import KamarNWcCounter from "./components/KamarNWcCounter";
-import Fasilitas from "./components/Fasilitas";
+import LTLB from "./components/LTLB.jsx";
+import Fasilitas from "./components/Fasilitas.jsx";
 import Lokasi from "./components/Lokasi";
-import Zona from "./components/Zona";
-import Yard from "./components/Yard";
+import Zona from "./components/Zona.jsx";
 import ImagesUpload from "./components/ImagesUpload";
-import Lantai from "./components/Lantai";
-import ParkirMobil from "./components/ParkirMobil.jsx";
+import JumlahDetail from "./components/JumlahDetail";
 import Listrik from "./components/Listrik";
 import BeliSewa from "./components/BeliSewa";
 const InputForm = () => {
@@ -43,14 +40,14 @@ const InputForm = () => {
       "https://images.unsplash.com/photo-1665777916560-60bbcb0ce05b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80",
     ],
     isFurnished: null,
-    luasTanah: null,
-    luasBangunan: null,
+    luasTanah: 0,
+    luasBangunan: 0,
     lantai: 0,
     parkir: 0,
     kamarTidur: 0,
     kamarMandi: 0,
     fasilitas: [],
-    zona: [],
+    zona: null,
     isYard: false,
     listrik: null,
   };
@@ -110,13 +107,10 @@ const InputForm = () => {
         </div>
         <div className="mx-5 mt-5 flex flex-col gap-2 w-[40%]">
           <Furnished formValue={formValue} setFormValue={setFormValue} />
-          <ParkirMobil formValue={formValue} setFormValue={setFormValue} />
-          <Lantai formValue={formValue} setFormValue={setFormValue} />
+          <JumlahDetail formValue={formValue} setFormValue={setFormValue} />
           <LTLB formValue={formValue} setFormValue={setFormValue} />
-          <KamarNWcCounter formValue={formValue} setFormValue={setFormValue} />
           <Fasilitas formValue={formValue} setFormValue={setFormValue} />
           <Zona formValue={formValue} setFormValue={setFormValue} />
-          <Yard formValue={formValue} setFormValue={setFormValue} />
           <Listrik formValue={formValue} setFormValue={setFormValue} />
           <div className="review-submit">
             <button

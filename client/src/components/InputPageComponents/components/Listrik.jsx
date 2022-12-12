@@ -1,5 +1,6 @@
 import React from "react";
 import { NumericFormat } from "react-number-format";
+import { TextField } from "@mui/material";
 const Listrik = (props) => {
   const { formValue, setFormValue } = props;
 
@@ -10,8 +11,9 @@ const Listrik = (props) => {
   };
   return (
     <div className="listrik">
-      <h3>Listrik</h3>
       <NumericFormat
+        label="Daya Listrik"
+        required
         displayType="number"
         value={formValue.listrik}
         onChange={handleOnChange}
@@ -20,9 +22,21 @@ const Listrik = (props) => {
         allowNegative={false}
         maxLength={5}
         placeholder={"Daya Listrik Properti..."}
+        customInput={TextField}
         isAllowed={(values) => {
           const { value } = values;
           return value >= 0;
+        }}
+        sx={{
+          "& label.Mui-focused": { color: "#ee6c4d" },
+          "& .MuiOutlinedInput-root": {
+            "&.Mui-focused fieldset": {
+              borderColor: "#ee6c4d",
+            },
+          },
+        }}
+        InputProps={{
+          endAdornment: <p className="text-[gray]">VA</p>,
         }}
       />
     </div>
