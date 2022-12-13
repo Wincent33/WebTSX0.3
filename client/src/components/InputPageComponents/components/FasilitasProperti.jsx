@@ -1,13 +1,13 @@
 import { useState } from "react";
 import Select from "react-select";
 import FasilitasOptions from "../../../assets/data/FasilitasOptions.json";
-const Fasilitas = (props) => {
+const FasilitasProperti = (props) => {
   const { formValue, setFormValue } = props;
   const [isFocused, setIsFocused] = useState(false);
 
   const handleOnChange = (e) => {
     let updatedValue = {};
-    updatedValue = { fasilitas: e.value };
+    updatedValue = { FasilitasProperti: e.value };
     setFormValue((prev) => ({ ...prev, ...updatedValue }));
   };
 
@@ -20,7 +20,7 @@ const Fasilitas = (props) => {
             : "absolute text-xs px-1 text-[grey] bg-white translate-x-3 -translate-y-2 z-[92]"
         }
       >
-        Fasilitas *
+        Fasilitas Properti*
       </label>
       <Select
         className="z-[91]"
@@ -29,7 +29,7 @@ const Fasilitas = (props) => {
         options={FasilitasOptions}
         isMulti={true}
         onChange={handleOnChange}
-        value={formValue.fasilitas}
+        value={formValue.FasilitasProperti}
         placeholder="Pilih Lebih Dari 1..."
         styles={{
           control: (base, state) => ({
@@ -48,4 +48,4 @@ const Fasilitas = (props) => {
   );
 };
 
-export default Fasilitas;
+export default FasilitasProperti;

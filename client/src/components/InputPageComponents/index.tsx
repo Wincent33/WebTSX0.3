@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./style.scss";
 import ReviewPopUP from "./ReviewPopUpContent";
 import Judul from "./components/Judul";
 import NamaProperti from "./components/NamaProperti";
@@ -13,14 +12,16 @@ import ProvinsiSelect from "./components/ProvinsiSelect.jsx";
 import KabupatenSelect from "./components/KabupatenSelect.jsx";
 import KecamatanSelect from "./components/KecamatanSelect.jsx";
 import LTLB from "./components/LTLB.jsx";
-import Fasilitas from "./components/Fasilitas.jsx";
+import FasilitasProperti from "./components/FasilitasProperti.jsx";
 import Lokasi from "./components/Lokasi";
 import Zona from "./components/Zona.jsx";
 import ImagesUpload from "./components/ImagesUpload";
 import JumlahDetail from "./components/JumlahDetail";
 import Listrik from "./components/Listrik";
 import BeliSewa from "./components/BeliSewa";
-import Orientasi from "./components/Orientasi"
+import Orientasi from "./components/Orientasi";
+import FasilitasSekitar from "./components/FasilitasSekitar";
+import TahunBangun from "./components/TahunBangun";
 const InputForm = () => {
   const formInnit = {
     status: "dijual",
@@ -47,11 +48,13 @@ const InputForm = () => {
     parkir: 0,
     kamarTidur: 0,
     kamarMandi: 0,
-    fasilitas: [],
+    fasilitasSekitar: [],
+    fasilitasProperti: [],
     zona: null,
-    orientasi:"",
+    orientasi: "",
     isYard: false,
     listrik: null,
+    tahunBangun: 2024,
   };
   const [formValue, setFormValue] = useState(formInnit);
   const [reviewPopUp, setReviewPopUp] = useState(false);
@@ -111,13 +114,20 @@ const InputForm = () => {
           <Furnished formValue={formValue} setFormValue={setFormValue} />
           <JumlahDetail formValue={formValue} setFormValue={setFormValue} />
           <LTLB formValue={formValue} setFormValue={setFormValue} />
-          <Fasilitas formValue={formValue} setFormValue={setFormValue} />
+          <FasilitasProperti
+            formValue={formValue}
+            setFormValue={setFormValue}
+          />
+          <FasilitasSekitar formValue={formValue} setFormValue={setFormValue} />
           <Zona formValue={formValue} setFormValue={setFormValue} />
-          <Orientasi formValue={formValue} setFormValue={setFormValue}/>
-          <Listrik formValue={formValue} setFormValue={setFormValue} />
+          <Orientasi formValue={formValue} setFormValue={setFormValue} />
+          <div>
+            <Listrik formValue={formValue} setFormValue={setFormValue} />
+            <TahunBangun formValue={formValue} setFormValue={setFormValue} />
+          </div>
           <div className="review-submit">
             <button
-              className="review"
+              className="mx-2 bg-primary4 px-4 py-1"
               onClick={(e) => {
                 e.preventDefault();
                 setReviewPopUp(true);
@@ -150,7 +160,7 @@ const InputForm = () => {
               provinsiValue={titleCase(formValue.provinsi.label)}
               imagesLength={imageURLs.length}
             />
-            <button className="submit">Submit</button>
+            <button className="mx-2 bg-primary4 px-4 py-1">Submit</button>
           </div>
         </div>
         {/* let result = formValue.fasilitas.map((a) => a.value); */}

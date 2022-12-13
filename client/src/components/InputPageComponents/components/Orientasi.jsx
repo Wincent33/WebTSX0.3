@@ -15,22 +15,22 @@ const Orientasi = (props) => {
   ];
   const handleOnChange = (e) => {
     let updatedValue = {};
-    updatedValue = { orientasi: e.value };
+    updatedValue = { orientasi: e };
     setFormValue((prev) => ({ ...prev, ...updatedValue }));
   };
   return (
-    <>
+    <div>
       <label
         className={
           isFocused
-            ? "absolute text-xs px-1 text-primary4 bg-white translate-x-3 -translate-y-2 z-[98]"
-            : "absolute text-xs px-1 text-[grey] bg-white translate-x-3 -translate-y-2 z-[98]"
+            ? "absolute text-xs px-1 text-primary4 bg-white translate-x-3 -translate-y-2 z-[86]"
+            : "absolute text-xs px-1 text-[grey] bg-white translate-x-3 -translate-y-2 z-[86]"
         }
       >
         Orientasi
       </label>
       <Select
-        className="z-[97]"
+        className="z-[85]"
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         isClearable={true}
@@ -50,11 +50,10 @@ const Orientasi = (props) => {
         }}
         options={OrientasiOption}
         placeholder={"Kosongkan atau Pilih salah satu..."}
-        value={formValue.isFurnished}
+        value={formValue.orientasi}
         onChange={handleOnChange}
       />
-
-    </>
+    </div>
   );
 };
 

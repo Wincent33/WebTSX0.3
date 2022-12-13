@@ -1,41 +1,42 @@
 import { useState } from "react";
-import ZonaOptions from "../../../assets/data/ZonaOptions.json";
 import Select from "react-select";
-
-const Zona = (props) => {
+import FasilitasOptions from "../../../assets/data/FasilitasOptions.json";
+const FasilitasSekitar = (props) => {
   const { formValue, setFormValue } = props;
   const [isFocused, setIsFocused] = useState(false);
 
   const handleOnChange = (e) => {
     let updatedValue = {};
-    updatedValue = { zona: e };
+    updatedValue = { fasilitasSekitar: e.value };
     setFormValue((prev) => ({ ...prev, ...updatedValue }));
   };
+
   return (
     <div>
       <label
         className={
           isFocused
-            ? "absolute text-xs px-1 text-primary4 bg-white translate-x-3 -translate-y-2 z-[88]"
-            : "absolute text-xs px-1 text-[grey] bg-white translate-x-3 -translate-y-2 z-[88]"
+            ? "absolute text-xs px-1 text-primary4 bg-white translate-x-3 -translate-y-2 z-[90]"
+            : "absolute text-xs px-1 text-[grey] bg-white translate-x-3 -translate-y-2 z-[90]"
         }
       >
-        Zona Interaksi *
+        Fasilitas Sekitar*
       </label>
       <Select
-        className="z-[87]"
+        className="z-[89]"
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-        options={ZonaOptions}
+        options={FasilitasOptions}
+        isMulti={true}
         onChange={handleOnChange}
-        placeholder="Pilih salah satu..."
-        isClearable={true}
-        value={formValue.zona}
+        value={formValue.fasilitasSekitar}
+        placeholder="Pilih Lebih Dari 1..."
         styles={{
           control: (base, state) => ({
             ...base,
             borderColor: state.isFocused ? "#ee6c4d" : "lightgrey",
-            height: "3.5rem",
+            minHeight: "3.5rem",
+            // height: "3.5rem",
             boxShadow: state.isFocused ? null : null,
             "&:hover": {
               borderColor: state.isFocused ? "" : "black",
@@ -47,4 +48,4 @@ const Zona = (props) => {
   );
 };
 
-export default Zona;
+export default FasilitasSekitar;

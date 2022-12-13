@@ -13,7 +13,7 @@ const NamaProperti = (props: any) => {
         className="w-full"
         label="Nama Properti"
         variant="outlined"
-        value={formValue.judul}
+        value={formValue.namaProperti}
         onChange={handleOnChange}
         required
         sx={{

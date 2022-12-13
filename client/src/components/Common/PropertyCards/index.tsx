@@ -4,6 +4,7 @@ import { BiBed, BiBath, BiCar } from "react-icons/bi";
 import { BsWhatsapp, BsTelephone } from "react-icons/bs";
 import SimpleImageSlider from "react-simple-image-slider";
 import { BsBookmarkCheck, BsBookmarkCheckFill } from "react-icons/bs";
+import { Tooltip } from "react-tooltip";
 // import { Slide } from "react-slideshow-image";
 // import LineEllipsis from "react-lines-ellipsis";
 const SellerPhotoSrc =
@@ -41,9 +42,9 @@ export default function PropertyCards(props: any) {
       {/* Top Card */}
       <div className="flex justify-between rounded-t-2xl w-[28rem] h-24 border-solid border-[1px] border-primary5">
         {/* Property Logo */}
-        <div className="max-h-14 my-auto mr-2 ml-4 max-w-[200px]">
+        <div className="my-auto mr-2 ml-4 max-w-[200px] max-h-full">
           <img
-            className="object-cover"
+            className="object-contain max-w-[150px] max-h-[85px]"
             src={props.devLogo}
             alt="property logo"
           />
@@ -99,26 +100,29 @@ export default function PropertyCards(props: any) {
           {/* Card Info Tags */}
           <div className="flex justify-start gap-x-2 mt-2 ml-2">
             {/* Card Info Tags Content */}
-            <div className="flex items-center bg-primary1 justify-center py-1 px-4 text-white rounded-3xl font-bold text-xl gap-2">
-              <BiBed color={"white"} size={"2rem"} />
-              <h5 className="items-center m-0 justify-center flex ">
+            <div
+              id="jumlah-kamar"
+              className="flex items-center bg-primary1 justify-center py-0.5 px-2 text-white rounded-3xl font-bold gap-2"
+            >
+              <BiBed color={"white"} size={"1.25rem"} />
+              <h5 className="text-base items-center m-0 justify-center flex ">
                 {props.jumlahKamar}
               </h5>
             </div>
-            <div className="flex items-center bg-primary1 justify-center py-1 px-4 text-white rounded-3xl font-bold text-xl gap-2">
-              <BiBath color={"white"} size={"2rem"} />
-              <h5 className="items-center m-0 justify-center flex ">
+            <div className="flex items-center bg-primary1 justify-center py-0.5 px-2 text-white rounded-3xl font-bold gap-2">
+              <BiBath color={"white"} size={"1.25rem"} />
+              <h5 className="text-base items-center m-0 justify-center flex ">
                 {props.jumlahWC}
               </h5>
             </div>
-            <div className="flex items-center bg-primary1 justify-center py-1 px-4 text-white rounded-3xl font-bold text-xl gap-2">
-              <BiCar color={"white"} size={"2rem"} />
-              <h5 className="items-center m-0 justify-center flex ">
+            <div className="flex items-center bg-primary1 justify-center py-0.5 px-2 text-white rounded-3xl font-bold gap-2">
+              <BiCar color={"white"} size={"1.25rem"} />
+              <h5 className="text-base items-center m-0 justify-center flex ">
                 {props.jumlahParkir}
               </h5>
             </div>
-            <div className="flex items-center bg-primary1 justify-center py-1 px-4 text-white rounded-3xl font-bold text-xl gap-2">
-              <h5 className="items-center m-0 justify-center flex ">
+            <div className="flex items-center bg-primary1 justify-center py-0.5 px-2 text-white rounded-3xl font-bold gap-2">
+              <h5 className="text-base items-center m-0 justify-center flex ">
                 {props.jumlahLantai} lt
               </h5>
             </div>
@@ -147,7 +151,7 @@ export default function PropertyCards(props: any) {
           {/* Seller Pics */}
           <div className="flex items-center justify-center w-16 h-16">
             <img
-              className="w-14 h-14 object-cover"
+              className="w-14 h-14 object-cover rounded-full"
               src={SellerPhotoSrc}
               alt="seller"
             />
@@ -158,7 +162,7 @@ export default function PropertyCards(props: any) {
               {props.sellerName}
             </h5>
             {/* Agency img */}
-            <img className="max-h-40px m-0" src={AgencyLogoSrc} alt="" />
+            <img className="max-h-4 m-0" src={AgencyLogoSrc} alt="" />
           </div>
         </div>
         Seller Contact
