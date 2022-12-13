@@ -20,6 +20,7 @@ import ImagesUpload from "./components/ImagesUpload";
 import JumlahDetail from "./components/JumlahDetail";
 import Listrik from "./components/Listrik";
 import BeliSewa from "./components/BeliSewa";
+import Orientasi from "./components/Orientasi"
 const InputForm = () => {
   const formInnit = {
     status: "dijual",
@@ -48,6 +49,7 @@ const InputForm = () => {
     kamarMandi: 0,
     fasilitas: [],
     zona: null,
+    orientasi:"",
     isYard: false,
     listrik: null,
   };
@@ -111,6 +113,7 @@ const InputForm = () => {
           <LTLB formValue={formValue} setFormValue={setFormValue} />
           <Fasilitas formValue={formValue} setFormValue={setFormValue} />
           <Zona formValue={formValue} setFormValue={setFormValue} />
+          <Orientasi formValue={formValue} setFormValue={setFormValue}/>
           <Listrik formValue={formValue} setFormValue={setFormValue} />
           <div className="review-submit">
             <button
