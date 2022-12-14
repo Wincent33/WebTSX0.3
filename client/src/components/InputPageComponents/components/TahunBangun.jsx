@@ -8,8 +8,6 @@ const TahunBangun = (props) => {
     setFormValue((prev) => ({ ...prev, ...updatedValue }));
   };
   var currentYear = new Date().getFullYear();
-  console.log(currentYear);
-  console.log(typeof currentYear);
   return (
     <NumericFormat
       className="w-[40%]"

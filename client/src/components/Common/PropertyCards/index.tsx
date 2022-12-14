@@ -36,6 +36,7 @@ export default function PropertyCards(props: any) {
     // console.log(bookmark);
   };
   // console.log(props);
+
   return (
     // Property Cards
     <div className="flex flex-col items-center gap-1 m-2 py-5 px-0 w-[500px] max-h-[700px]">
@@ -55,7 +56,6 @@ export default function PropertyCards(props: any) {
             {props.harga}
           </h1>
           <h5 className="font-black text-[gray] m-0">
-            {" "}
             Cicilan: {props.cicilan} jutaan/bulan
           </h5>
         </div>
@@ -94,8 +94,9 @@ export default function PropertyCards(props: any) {
             {props.judul}
           </h2>
           <p className="ml-3 flex hover:underline hover:cursor-pointer">
-            {props.kecamatanValue}, {props.kabupatenValue},{" "}
-            {props.provinsiValue}
+            {props.kecamatanValue !== "" ? props.kecamatanValue : "Kecamatan"},{" "}
+            {props.kabupatenValue !== "" ? props.kabupatenValue : "Kabupaten"},{" "}
+            {props.provinsiValue !== "" ? props.provinsiValue : "Provinsi"}
           </p>
           {/* Card Info Tags */}
           <div className="flex justify-start gap-x-2 mt-2 ml-2">

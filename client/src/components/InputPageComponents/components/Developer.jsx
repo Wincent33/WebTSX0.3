@@ -6,7 +6,7 @@ const Developer = (props) => {
   const { formValue, setFormValue } = props;
   const [isFocused, setIsFocused] = useState(false);
   const value =
-    formValue.developer === null && formValue.devLogo === null
+    formValue.developer === null
       ? [0]
       : { label: formValue.developer, value: formValue.devLogo };
 

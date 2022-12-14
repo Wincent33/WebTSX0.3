@@ -14,7 +14,8 @@ const LTLB = (props) => {
     updatedValue = { luasBangunan: parseInt(e.target.value) };
     setFormValue((prev) => ({ ...prev, ...updatedValue }));
   };
-
+  console.log("LT:" + formValue.luasTanah);
+  console.log("LB:" + formValue.luasBangunan);
   return (
     <div className="flex flex-row w-full justify-around">
       <NumericFormat
@@ -35,7 +36,6 @@ const LTLB = (props) => {
         defaultValue={0}
         allowLeadingZeros={false}
         allowNegative={false}
-        maxLength={3}
         customInput={TextField}
         sx={{
           "& label.Mui-focused": { color: "#ee6c4d" },
@@ -47,7 +47,7 @@ const LTLB = (props) => {
         }}
         isAllowed={(values) => {
           const { value } = values;
-          return value >= 0;
+          return value >= 0 && value <= 9999;
         }}
       />
       <NumericFormat
@@ -68,7 +68,6 @@ const LTLB = (props) => {
         defaultValue={0}
         allowLeadingZeros={false}
         allowNegative={false}
-        maxLength={3}
         customInput={TextField}
         sx={{
           "& label.Mui-focused": { color: "#ee6c4d" },
@@ -80,7 +79,7 @@ const LTLB = (props) => {
         }}
         isAllowed={(values) => {
           const { value } = values;
-          return value >= 0;
+          return value >= 0 && value <= 9999;
         }}
       />
     </div>
