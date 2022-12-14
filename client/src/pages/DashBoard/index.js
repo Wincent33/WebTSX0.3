@@ -24,9 +24,12 @@ function DashBoard() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <div className="dashboard" style={{display:"flex"}} >
+        <div className="dashboard" style={{ display: "flex" }}>
           <Sidebar isSidebar={isSidebar} />
-          <main className="content" style={{width: "100vw", maxWidth:"1500px"}}>
+          <main
+            className="content"
+            style={{ width: "100vw", maxWidth: "1200px" }}
+          >
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
               <Route path="/" element={<Dashboard />} />

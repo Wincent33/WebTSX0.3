@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { ProSidebarProvider, Menu, MenuItem } from "react-pro-sidebar";
-import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
 // import "react-pro-sidebar/dist/css/styles.css";
-import { tokens } from "../../theme";
+// import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
@@ -15,76 +15,53 @@ import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import CloseIcon from "@mui/icons-material/Close";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-
-const Item = ({ title, to, icon, selected, setSelected }) => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-  return (
-    <NavLink to={to}>
-      <MenuItem
-        active={selected === title}
-        style={{
-          color: colors.grey[500],
-        }}
-        onClick={() => setSelected(title)}
-        icon={icon}
-      >
-        <Typography>{title}</Typography>
-      </MenuItem>
-    </NavLink>
-  );
-};
+import { BiMenuAltLeft } from "react-icons/bi";
 
 const Sidebar = () => {
-  const theme = useTheme();
-  const colors = tokens(theme.palette.mode);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const [selected, setSelected] = useState("Dashboard");
 
+  const Item = ({ title, to, icon, selected, setSelected }) => {
+    return (
+      <NavLink to={to}>
+        <MenuItem
+          className="text-primary5"
+          active={selected === title}
+          onClick={() => setSelected(title)}
+          icon={icon}
+        >
+          {!isCollapsed ? <Typography>{title}</Typography> : <></>}
+        </MenuItem>
+      </NavLink>
+    );
+  };
   return (
-    <Box
-      sx={{
-        "& .pro-sidebar-inner": {
-          background: `${colors.primary[900]} !important`,
-        },
-        "& .pro-icon-wrapper": {
-          backgroundColor: "transparent !important",
-        },
-        "& .pro-inner-item": {
-          padding: "5px 35px 5px 20px !important",
-        },
-        "& .pro-inner-item:hover": {
-          color: "#ee6c4d !important",
-        },
-        "& .pro-menu-item.active": {
-          color: "#ee6c4d !important",
-        },
-      }}
-    >
+    <Box className="bg-white h-[100vh] sticky">
       <ProSidebarProvider collapsed={isCollapsed}>
-        <Menu iconShape="square" closeOnClick={true}>
+        <Menu closeOnClick={true}>
           {/* LOGO AND MENU ICON */}
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
-            icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
-            style={{
-              margin: "10px 0 20px 0",
-              color: colors.grey[100],
-              background: colors.primary[500],
-            }}
+            icon={isCollapsed ? <BiMenuAltLeft size={60} /> : undefined}
+            className="mt-2 mr-0 mb-5 ml-0 text-primary4"
+            // style={{
+            //   margin: "10px 0 20px 0",
+            //   color: colors.grey[100],
+            //   background: colors.primary[500],
+            // }}
           >
             {!isCollapsed && (
               <Box
                 display="flex"
                 justifyContent="space-between"
                 alignItems="center"
-                ml="15px"
               >
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
-                  <MenuOutlinedIcon />
+                  <CloseIcon className="text-primary4" />
                 </IconButton>
-                <Typography variant="h4" color={colors.grey[100]}>
+                <Typography variant="h4" color={"gray"}>
                   Welcome, Josephine
                 </Typography>
               </Box>
@@ -105,20 +82,22 @@ const Sidebar = () => {
               <Box textAlign="center">
                 <Typography
                   variant="h2"
-                  color={colors.grey[100]}
+                  color={"grey"}
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
                   Josephine RL
                 </Typography>
-                <Typography variant="h5" color={colors.greenAccent[500]}>
+                <Typography variant="h5" color={"green"}>
                   Owner of Wincent's Heart
                 </Typography>
               </Box>
             </Box>
           )}
 
-          <Box paddingLeft={isCollapsed ? undefined : "10%"}>
+          {/* This is the Start of the menus */}
+
+          <Box>
             <Item
               title="Dashboard"
               to="/dashboard"
@@ -129,7 +108,7 @@ const Sidebar = () => {
 
             <Typography
               variant="h6"
-              color={colors.grey[300]}
+              color={"grey"}
               sx={{ m: "15px 0 5px 20px" }}
             >
               Data
@@ -158,7 +137,7 @@ const Sidebar = () => {
 
             <Typography
               variant="h6"
-              color={colors.grey[300]}
+              color={"grey"}
               sx={{ m: "15px 0 5px 20px" }}
             >
               Pages
@@ -187,7 +166,7 @@ const Sidebar = () => {
 
             <Typography
               variant="h6"
-              color={colors.grey[300]}
+              color={"grey"}
               sx={{ m: "15px 0 5px 20px" }}
             >
               Charts
