@@ -61,11 +61,11 @@ export default function PropertyCards(props: any) {
         </div>
       </div>
       {/* Property Image */}
-      <div className="h-[250px] w-[450px] p-0 border-[1px] border-solid border-primary5 -z-[1]">
+      <div className="h-[250px] w-[500px] p-0 border-[1px] border-solid border-primary5 z-[0]">
         <SimpleImageSlider
           navSize={30}
           height={250}
-          width={450}
+          width={500}
           images={props.images}
           showBullets={true}
           showNavs={true}

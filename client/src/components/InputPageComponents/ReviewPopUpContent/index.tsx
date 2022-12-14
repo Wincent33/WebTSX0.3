@@ -18,8 +18,9 @@ const ReviewPopUP = (props: any) => {
         </button>
         <div className="flex justify-center">
           <PropertyCards
+          className="z-[1000]"
             devLogo={props.devLogo}
-            harga={WordifyRupiah(props.harga)}
+            harga={"Rp "+WordifyRupiah(props.harga)}
             images={props.images}
             cicilan={props.cicilan}
             imageTotal={props.imagesLength}
