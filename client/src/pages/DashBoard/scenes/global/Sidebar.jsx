@@ -4,20 +4,16 @@ import { Box, IconButton, Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
 // import "react-pro-sidebar/dist/css/styles.css";
 // import { tokens } from "../../theme";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
-import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
-import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
-import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import CloseIcon from "@mui/icons-material/Close";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import { BiMenuAltLeft } from "react-icons/bi";
+import { BiMenuAltLeft, BiHome, BiGroup } from "react-icons/bi";
+import { RiMenuFoldLine, RiContactsBook2Line } from "react-icons/ri";
+import { TbFileInvoice } from "react-icons/tb";
 
 const Sidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -40,7 +36,7 @@ const Sidebar = () => {
   return (
     <Box className="bg-white h-[100vh] sticky">
       <ProSidebarProvider collapsed={isCollapsed}>
-        <Menu closeOnClick={true}>
+        <Menu closeOnClick={true} className={isCollapsed ? "w-20" : ""}>
           {/* LOGO AND MENU ICON */}
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
@@ -59,7 +55,7 @@ const Sidebar = () => {
                 alignItems="center"
               >
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
-                  <CloseIcon className="text-primary4" />
+                  <RiMenuFoldLine size={30} className="text-primary4" />
                 </IconButton>
                 <Typography variant="h4" color={"gray"}>
                   Welcome, Josephine
@@ -101,7 +97,15 @@ const Sidebar = () => {
             <Item
               title="Dashboard"
               to="/dashboard"
-              icon={<HomeOutlinedIcon />}
+              icon={<BiHome />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+            <Item
+              title="Dashboard"
+              to="/dashboard/dashdash"
+              icon={<BiHome />}
               selected={selected}
               setSelected={setSelected}
             />
@@ -116,21 +120,21 @@ const Sidebar = () => {
             <Item
               title="Manage Team"
               to="/dashboard/team"
-              icon={<PeopleOutlinedIcon />}
+              icon={<BiGroup />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Contacts Information"
               to="/dashboard/contacts"
-              icon={<ContactsOutlinedIcon />}
+              icon={<RiContactsBook2Line />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Invoices Balances"
               to="/dashboard/invoices"
-              icon={<ReceiptOutlinedIcon />}
+              icon={<TbFileInvoice />}
               selected={selected}
               setSelected={setSelected}
             />
