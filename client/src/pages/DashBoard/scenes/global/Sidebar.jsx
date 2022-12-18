@@ -103,8 +103,8 @@ const Sidebar = () => {
             />
 
             <Item
-              title="Dashboard"
-              to="/dashboard/dashdash"
+              title="DashboardExample"
+              to="/dashboard/dashexample"
               icon={<BiHome />}
               selected={selected}
               setSelected={setSelected}

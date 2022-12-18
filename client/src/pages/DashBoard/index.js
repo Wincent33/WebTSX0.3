@@ -15,6 +15,7 @@ import Geography from "./scenes/geography";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Calendar from "./scenes/calendar/calendar";
+import DashExample from "./scenes/DashExample";
 
 function DashBoard() {
   const [theme, colorMode] = useMode();
@@ -26,14 +27,11 @@ function DashBoard() {
         <CssBaseline />
         <div className="dashboard" style={{ display: "flex" }}>
           <Sidebar isSidebar={isSidebar} />
-          <main
-            className="content"
-            style={{ width: "100vw", maxWidth: "1200px" }}
-          >
+          <main className="content" style={{ width: "100vw" }}>
             <Topbar setIsSidebar={setIsSidebar} />
             <Routes>
               <Route path="/" element={<Dashboard />} />
-              <Route path="/dashdash" element={}
+              <Route path="/dashexample" element={<DashExample />} />
               <Route path="/team" element={<Team />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />
