@@ -30,46 +30,70 @@ const DashExample = () => {
       {/* Content */}
       <div className="flex flex-col gap-5">
         {/* Stats */}
-        <div className="flex flex-row gap-5">
-          <div className="flex flex-col items-center min-h-fit min-w-fit w-[50%] max-w-[1200px] h-[250px] p-5 mx-auto rounded-3xl bg-primary5 gap-5 ">
-            <div className="flex flex-row justify-center items-center gap-5">
-              <AiOutlineMail size={50} color="white" />
-              <h1 className="text-5xl"> Pesan</h1>
+        <div className="flex flex-row gap-1 content-start">
+          <div
+            className="flex flex-col items-center h-fit w-fit
+           p-5 mx-auto rounded-3xl bg-primary5 gap-3 "
+          >
+            <div
+              className="flex flex-row justify-center items-center
+             gap-2"
+            >
+              <AiOutlineMail size={40} color="white" />
+              <h1 className="text-3xl"> Pesan</h1>
             </div>
-            <div className="w-[70%] mx-5 h-2 bg-white" />
+            <div className="w-[70%] mx-5 h-1 bg-white" />
             <div className="flex flex-row gap-5">
-              <Box className="bg-primary4 h-fit w-fit p-5 text-center rounded-xl">
-                <h1 className="text-4xl font-bold">14</h1>
-                <h5 className="text-3xl"> Pesan Baru</h5>
+              <Box
+                className="bg-primary4 h-fit w-fit p-2 
+              text-center rounded-xl"
+              >
+                <h1 className="text-2xl font-bold">14</h1>
+                <h5 className="text-xl"> Pesan Baru</h5>
               </Box>
-              <Box className="bg-primary4 h-fit w-fit p-5 text-center rounded-xl">
-                <h1 className="text-4xl font-bold">14</h1>
-                <h5 className="text-3xl"> Pesan Baru</h5>
+              <Box
+                className="bg-primary4 h-fit w-fit p-2 
+              text-center rounded-xl"
+              >
+                <h1 className="text-2xl font-bold">14</h1>
+                <h5 className="text-xl"> Pesan Baru</h5>
               </Box>
-              <Box className="bg-primary4 h-fit w-fit p-5 text-center rounded-xl">
-                <h1 className="text-4xl font-bold">14</h1>
-                <h5 className="text-3xl"> Pesan Baru</h5>
+              <Box
+                className="bg-primary4 h-fit w-fit p-2 
+              text-center rounded-xl"
+              >
+                <h1 className="text-2xl font-bold">14</h1>
+                <h5 className="text-xl"> Pesan Baru</h5>
               </Box>
             </div>
           </div>
-          <div className="flex flex-col items-center min-h-fit min-w-fit w-[50%] max-w-[1200px] h-[250px] p-5 mx-auto rounded-3xl bg-primary5 gap-5 ">
-            <div className="flex flex-row justify-center items-center gap-5">
-              <MdOutlineRealEstateAgent size={50} color="white" />
-              <h1 className="text-5xl">Listing</h1>
+          <div
+            className="flex flex-col items-center h-fit 
+          w-fit p-5 mx-auto rounded-3xl bg-primary5 gap-3 "
+          >
+            <div
+              className="flex flex-row justify-center
+             items-center gap-2"
+            >
+              <MdOutlineRealEstateAgent size={40} color="white" />
+              <h1 className="text-3xl">Listing</h1>
             </div>
-            <div className="w-[70%] mx-5 h-2 bg-white" />
+            <div className="w-[70%] mx-5 h-1 bg-white" />
             <div className="flex flex-row gap-5">
-              <Box className="bg-primary4 h-fit w-fit p-5 text-center rounded-xl">
-                <h1 className="text-4xl font-bold">14</h1>
-                <h5 className="text-3xl"> Listing Aktif</h5>
+              <Box
+                className="bg-primary4 h-fit w-fit p-2
+               text-center rounded-xl"
+              >
+                <h1 className="text-2xl font-bold">14</h1>
+                <h5 className="text-xl"> Listing Aktif</h5>
               </Box>
-              <Box className="bg-primary4 h-fit w-fit p-5 text-center rounded-xl">
-                <h1 className="text-4xl font-bold">123</h1>
-                <h5 className="text-3xl">Listing Lampau</h5>
+              <Box className="bg-primary4 h-fit w-fit p-2 text-center rounded-xl">
+                <h1 className="text-2xl font-bold">123</h1>
+                <h5 className="text-xl">Listing Lampau</h5>
               </Box>
-              <Box className="bg-primary4 h-fit w-fit p-5 text-center rounded-xl">
-                <h1 className="text-4xl font-bold">1321</h1>
-                <h5 className="text-3xl">Draft Listing</h5>
+              <Box className="bg-primary4 h-fit w-fit p-2 text-center rounded-xl">
+                <h1 className="text-2xl font-bold">1321</h1>
+                <h5 className="text-xl">Draft Listing</h5>
               </Box>
             </div>
           </div>
