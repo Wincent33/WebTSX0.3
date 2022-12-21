@@ -7,6 +7,14 @@ import LineChart from "../../components/LineChart";
 import { AiOutlineMail } from "react-icons/ai";
 import { MdOutlineRealEstateAgent } from "react-icons/md";
 const DashExample = () => {
+  const TopStats = ({number, title}) => {
+    return (
+      <Box className="bg-primary4 h-fit w-fit p-2 text-center rounded-xl">
+        <h1 className="text-2xl font-bold">{number}</h1>
+        <h5 className="text-xl">{title}</h5>
+      </Box>
+    );
+  };
   return (
     <Box className="m-5">
       {/* Title dan Report */}
@@ -30,71 +38,29 @@ const DashExample = () => {
       {/* Content */}
       <div className="flex flex-col gap-5">
         {/* Stats */}
-        <div className="flex flex-row gap-1 content-start">
-          <div
-            className="flex flex-col items-center h-fit w-fit
-           p-5 mx-auto rounded-3xl bg-primary5 gap-3 "
-          >
-            <div
-              className="flex flex-row justify-center items-center
-             gap-2"
-            >
+        <div className="flex flex-row gap-5 justify-start">
+          <div className="flex flex-col items-center h-fit w-fit p-5 rounded-3xl bg-primary5 gap-3">
+            <div className="flex flex-row justify-center items-center gap-2">
               <AiOutlineMail size={40} color="white" />
-              <h1 className="text-3xl"> Pesan</h1>
+              <h1 className="text-3xl">Pesan</h1>
             </div>
             <div className="w-[70%] mx-5 h-1 bg-white" />
             <div className="flex flex-row gap-5">
-              <Box
-                className="bg-primary4 h-fit w-fit p-2 
-              text-center rounded-xl"
-              >
-                <h1 className="text-2xl font-bold">14</h1>
-                <h5 className="text-xl"> Pesan Baru</h5>
-              </Box>
-              <Box
-                className="bg-primary4 h-fit w-fit p-2 
-              text-center rounded-xl"
-              >
-                <h1 className="text-2xl font-bold">14</h1>
-                <h5 className="text-xl"> Pesan Baru</h5>
-              </Box>
-              <Box
-                className="bg-primary4 h-fit w-fit p-2 
-              text-center rounded-xl"
-              >
-                <h1 className="text-2xl font-bold">14</h1>
-                <h5 className="text-xl"> Pesan Baru</h5>
-              </Box>
+              <TopStats number={14} title="Pesan Baru"/>
+              <TopStats number={14} title="Kotak Pesan"/>
+              <TopStats number={14} title="Arsip Pesan"/>
             </div>
           </div>
-          <div
-            className="flex flex-col items-center h-fit 
-          w-fit p-5 mx-auto rounded-3xl bg-primary5 gap-3 "
-          >
-            <div
-              className="flex flex-row justify-center
-             items-center gap-2"
-            >
+          <div className="flex flex-col items-center h-fit w-fit p-5 rounded-3xl bg-primary5 gap-3">
+            <div className="flex flex-row justify-center items-center gap-2">
               <MdOutlineRealEstateAgent size={40} color="white" />
               <h1 className="text-3xl">Listing</h1>
             </div>
             <div className="w-[70%] mx-5 h-1 bg-white" />
             <div className="flex flex-row gap-5">
-              <Box
-                className="bg-primary4 h-fit w-fit p-2
-               text-center rounded-xl"
-              >
-                <h1 className="text-2xl font-bold">14</h1>
-                <h5 className="text-xl"> Listing Aktif</h5>
-              </Box>
-              <Box className="bg-primary4 h-fit w-fit p-2 text-center rounded-xl">
-                <h1 className="text-2xl font-bold">123</h1>
-                <h5 className="text-xl">Listing Lampau</h5>
-              </Box>
-              <Box className="bg-primary4 h-fit w-fit p-2 text-center rounded-xl">
-                <h1 className="text-2xl font-bold">1321</h1>
-                <h5 className="text-xl">Draft Listing</h5>
-              </Box>
+              <TopStats number={0} title="Listing Aktif"/>
+              <TopStats number={0} title="Listing Lampau"/>
+              <TopStats number={0} title="Draft Listing"/>
             </div>
           </div>
         </div>
@@ -118,7 +84,7 @@ const DashExample = () => {
             <Box>
               <IconButton>
                 <DownloadOutlinedIcon
-                  sx={{ fontSize: "26px", color: "green" }}
+                  sx={{ fontSize: "26px", color: "white" }}
                 />
               </IconButton>
             </Box>
