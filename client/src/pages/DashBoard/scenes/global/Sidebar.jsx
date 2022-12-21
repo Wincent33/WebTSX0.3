@@ -36,17 +36,12 @@ const Sidebar = () => {
   return (
     <Box className="bg-white h-[100vh] sticky">
       <ProSidebarProvider collapsed={isCollapsed}>
-        <Menu closeOnClick={true} className={isCollapsed ? "w-20" : ""}>
+        <Menu closeOnClick={true} className={isCollapsed ? "w-24" : "w-80"}>
           {/* LOGO AND MENU ICON */}
           <MenuItem
             onClick={() => setIsCollapsed(!isCollapsed)}
             icon={isCollapsed ? <BiMenuAltLeft size={60} /> : undefined}
             className="mt-2 mr-0 mb-5 ml-0 text-primary4"
-            // style={{
-            //   margin: "10px 0 20px 0",
-            //   color: colors.grey[100],
-            //   background: colors.primary[500],
-            // }}
           >
             {!isCollapsed && (
               <Box

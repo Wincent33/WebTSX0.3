@@ -1,0 +1,68 @@
+[
+    {
+        "rank": 1,
+        "idListing": 123123,
+        "title": "Rumah 1",
+        "imgUrl": "https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "lokasi": {
+            "alamat": "Jl. Taman Helcon1",
+            "provinsi": "Jawa Barat",
+            "kabupaten": "Kota Bekasi",
+            "kecamatan": "Taruma Jaya"
+        },
+        "stats": {
+            "dilihat": 3333,
+            "deltaLihat": 3,
+            "disimpan": 333,
+            "deltaSimpan": 3,
+            "pesan": 33,
+            "deltaPesan": 3,
+            "interaksi": 3,
+            "deltaInteraksi": 3
+        }
+    },
+    {
+        "rank": 2,
+        "idListing": 234234,
+        "title": "Rumah 2",
+        "imgUrl": "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+        "lokasi": {
+            "alamat": "Jl. Taman Helcon2",
+            "provinsi": "Jawa Barat",
+            "kabupaten": "Kota Bekasi",
+            "kecamatan": "Taruma Jaya"
+        },
+        "stats": {
+            "dilihat": 2222,
+            "deltaLihat": 2,
+            "disimpan": 222,
+            "deltaSimpan": 2,
+            "pesan": 2,
+            "deltaPesan": 2,
+            "interaksi": 2,
+            "deltaInteraksi": 2
+        }
+    },
+    {
+        "rank": 3,
+        "idListing": 345345,
+        "title": "Rumah 3",
+        "imgUrl": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+        "lokasi": {
+            "alamat": "Jl. Taman Helcon3",
+            "provinsi": "Jawa Barat",
+            "kabupaten": "Kota Bekasi",
+            "kecamatan": "Taruma Jaya"
+        },
+        "stats": {
+            "dilihat": 1111,
+            "deltaLihat": 1,
+            "disimpan": 111,
+            "deltaSimpan": 1,
+            "pesan": 1,
+            "deltaPesan": 1,
+            "interaksi": 1,
+            "deltaInteraksi": 1
+        }
+    }
+]

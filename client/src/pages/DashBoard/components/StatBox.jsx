@@ -7,8 +7,8 @@ const StatBox = ({ title, subtitle, icon, progress, increase }) => {
   const colors = tokens(theme.palette.mode);
 
   return (
-    <div className="w-full mx-8 rounded-lg ">
-      {/* <Box display="flex" justifyContent="space-between">
+    <>
+      <Box display="flex" justifyContent="space-between">
         <Box>
           {icon}
           <Typography variant="h4" fontWeight="bold" sx={{ color: "black" }}>
@@ -30,8 +30,8 @@ const StatBox = ({ title, subtitle, icon, progress, increase }) => {
         >
           {increase}
         </Typography>
-      </Box> */}
-    </div>
+      </Box>
+    </>
   );
 };
 
