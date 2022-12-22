@@ -42,8 +42,8 @@ const DashExample = () => {
     } = props;
     const Stats = ({ Icon, title, value, delta }) => {
       return (
-        <div className=" bg-primary1 flex flex-row gap-1 w-[50%]">
-          <div className="flex flex-col justify-center items-center">
+        <div className=" bg-primary1 flex flex-row gap-1 w-[50%] justify-between">
+          <div className="flex flex-col justify-between items-center">
             <Icon size={"50px"} color="white" />
             <label>{title}</label>
           </div>
@@ -74,7 +74,7 @@ const DashExample = () => {
           <p className=" text-white">Id Listing: {id || "IdPalsu"}</p>
         </div>
         <div className=" bg-primary1 flex flex-col justify-center items-center gap-5 w-[50%]">
-          <div className="flex flex-row gap-5">
+          <div className="flex flex-row gap-5 justify-between min-w-[220px]">
             <Stats
               Icon={AiOutlineEye}
               title="Dilihat"
@@ -88,7 +88,7 @@ const DashExample = () => {
               delta={deltaSimpan || 0}
             />
           </div>
-          <div className="flex flex-row gap-5">
+          <div className="flex flex-row gap-5 justify-between min-w-[220px]">
             <Stats
               Icon={AiOutlineMail}
               title="Pesan"
