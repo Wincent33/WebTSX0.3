@@ -1,15 +1,23 @@
 import React from "react";
-import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, Button, IconButton, Typography } from "@mui/material";
 import Header from "../../components/Header";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import StatBox from "../../components/StatBox";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 import LineChart from "../../components/LineChart";
 import rankData from "./RankingMock.json";
+import { Tooltip } from "react-tooltip";
 import {
   AiOutlineMail,
   AiOutlineEye,
   AiOutlineLike,
   AiOutlineInteraction,
+  AiOutlinePlusCircle,
 } from "react-icons/ai";
 import { MdOutlineRealEstateAgent } from "react-icons/md";
 const DashExample = () => {
@@ -109,6 +117,90 @@ const DashExample = () => {
       </div>
     );
   };
+
+  function createData(
+    kategori,
+    jan,
+    feb,
+    mar,
+    apr,
+    mei,
+    jun,
+    jul,
+    agu,
+    sep,
+    okt,
+    nov,
+    des
+  ) {
+    return {
+      kategori,
+      jan,
+      feb,
+      mar,
+      apr,
+      mei,
+      jun,
+      jul,
+      agu,
+      sep,
+      okt,
+      nov,
+      des,
+    };
+  }
+  const rows = [
+    createData("Harga Listing(Avg)", 1, 6.0, 24, 4.0, 2, 3, 5, 21, 3, 4, 1, 3),
+    createData("Luas Tanah(Avg)", 237, 9.0, 37, 4.3, 2, 3, 5, 21, 3, 4, 1, 3),
+    createData(
+      "Luas Bangunan(Avg)",
+      262,
+      16.0,
+      24,
+      6.0,
+      2,
+      3,
+      5,
+      21,
+      3,
+      4,
+      1,
+      3
+    ),
+    createData(
+      "Harga/m persegi (Avg)",
+      305,
+      3.7,
+      67,
+      4.3,
+      2,
+      3,
+      5,
+      21,
+      3,
+      4,
+      1,
+      3
+    ),
+    createData("Jumlah View", 356, 16.0, 49, 3.9, 2, 3, 5, 21, 3, 4, 1, 3),
+    createData("Jumlah Pesan", 356, 16.0, 49, 3.9, 2, 3, 5, 21, 3, 4, 1, 3),
+    createData(
+      "Jumlah Listing disimpan",
+      356,
+      16.0,
+      49,
+      3.9,
+      2,
+      3,
+      5,
+      21,
+      3,
+      4,
+      1,
+      3
+    ),
+    createData("Jumlah interaksi", 356, 16.0, 49, 3.9, 2, 3, 5, 21, 3, 4, 1, 3),
+  ];
   return (
     <Box className="m-5">
       {/* Title dan Report */}
@@ -149,7 +241,7 @@ const DashExample = () => {
             <TopStats number={14} title="Arsip Pesan" />
           </div>
         </Box>
-        <Box className="p-5 col-span-6 bg-primary5 flex h-fit flex-col gap-3 items-center justify-center rounded-3xl ">
+        <Box className="relative p-5 col-span-6 bg-primary5 flex h-fit flex-col gap-3 items-center justify-center rounded-3xl ">
           <div className="flex flex-row justify-center items-center gap-2">
             <MdOutlineRealEstateAgent size={40} color="white" />
             <h1 className="text-3xl">Listing</h1>
@@ -160,6 +252,18 @@ const DashExample = () => {
             <TopStats number={0} title="Listing Lampau" />
             <TopStats number={0} title="Draft Listing" />
           </div>
+          <div
+            id="tambahListing"
+            className="absolute p-1 top-4 right-4 rounded-full bg-primary4 cursor-pointer hover:bg-primary5 duration-300"
+          >
+            <AiOutlinePlusCircle color="white" size={40} />
+          </div>
+          <Tooltip
+            anchorId="tambahListing"
+            className=""
+            place="left"
+            content="Tambah Listing Baru"
+          />
         </Box>
         {/* Row 2 */}
         <Box className="col-span-12 row-span-2 bg-primary5 rounded-3xl mt-10 h-fit">
@@ -211,8 +315,55 @@ const DashExample = () => {
             />
           ))}
         </Box>
+        <Box className=" p-5 col-span-12 row-span-4 bg-primary5 rounded-3xl mt-14">
+          <div className="text-3xl font-bold my-3">Statistik per Bulan</div>
+          <TableContainer component={Paper}>
+            <Table sx={{ minWidth: "fit" }} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell>Kategori</TableCell>
+                  <TableCell align="right">Jan</TableCell>
+                  <TableCell align="right">Feb</TableCell>
+                  <TableCell align="right">Mar</TableCell>
+                  <TableCell align="right">Apr</TableCell>
+                  <TableCell align="right">Mei</TableCell>
+                  <TableCell align="right">Jun</TableCell>
+                  <TableCell align="right">Jul</TableCell>
+                  <TableCell align="right">Agu</TableCell>
+                  <TableCell align="right">Sep</TableCell>
+                  <TableCell align="right">Okt</TableCell>
+                  <TableCell align="right">Nov</TableCell>
+                  <TableCell align="right">Des</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {rows.map((row) => (
+                  <TableRow
+                    key={row.name}
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  >
+                    <TableCell component="th" scope="row">
+                      {row.kategori}
+                    </TableCell>
+                    <TableCell align="right">{row.jan}</TableCell>
+                    <TableCell align="right">{row.feb}</TableCell>
+                    <TableCell align="right">{row.mar}</TableCell>
+                    <TableCell align="right">{row.apr}</TableCell>
+                    <TableCell align="right">{row.mei}</TableCell>
+                    <TableCell align="right">{row.jun}</TableCell>
+                    <TableCell align="right">{row.jul}</TableCell>
+                    <TableCell align="right">{row.agu}</TableCell>
+                    <TableCell align="right">{row.sep}</TableCell>
+                    <TableCell align="right">{row.okt}</TableCell>
+                    <TableCell align="right">{row.nov}</TableCell>
+                    <TableCell align="right">{row.des}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </Box>
       </Box>
-      <Box className=" py-5 col-span-4 bg-primary5 h-48 rounded-3xl mt-14"></Box>
     </Box>
   );
 };

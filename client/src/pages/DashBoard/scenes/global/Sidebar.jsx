@@ -11,6 +11,7 @@ import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import { AiOutlineMail } from "react-icons/ai";
 import { BiMenuAltLeft, BiHome, BiGroup } from "react-icons/bi";
 import { RiMenuFoldLine, RiContactsBook2Line } from "react-icons/ri";
 import { TbFileInvoice } from "react-icons/tb";
@@ -104,7 +105,13 @@ const Sidebar = () => {
               selected={selected}
               setSelected={setSelected}
             />
-
+            <Item
+              title="Pesan"
+              to="/dashboard/pesan"
+              icon={<AiOutlineMail />}
+              selected={selected}
+              setSelected={setSelected}
+            />
             <Typography
               variant="h6"
               color={"grey"}

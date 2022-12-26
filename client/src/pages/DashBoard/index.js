@@ -12,6 +12,7 @@ import Line from "./scenes/line";
 import Pie from "./scenes/pie";
 import FAQ from "./scenes/faq";
 import Geography from "./scenes/geography";
+import Pesan from "./scenes/pesan";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
 import Calendar from "./scenes/calendar/calendar";
@@ -32,6 +33,7 @@ function DashBoard() {
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/dashexample" element={<DashExample />} />
+              <Route path="/pesan" element={<Pesan />} />
               <Route path="/team" element={<Team />} />
               <Route path="/contacts" element={<Contacts />} />
               <Route path="/invoices" element={<Invoices />} />
