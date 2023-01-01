@@ -15,6 +15,8 @@ import SaveIcon from "@mui/icons-material/Save";
 import PrintIcon from "@mui/icons-material/Print";
 import ShareIcon from "@mui/icons-material/Share";
 import styles from "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
+import "./style.css";
+import ChatBox from "./ChatBox";
 import {
   Avatar,
   MainContainer,
@@ -27,6 +29,13 @@ import {
   InfoButton,
 } from "@chatscope/chat-ui-kit-react";
 const Pesan = () => {
+  const color = {
+    primary1: "#3d5a80",
+    primary2: "#98c1d9",
+    primary3: "#e0fbfc",
+    primary4: "#ee6c4d",
+    primary5: "#293241",
+  };
   const Mail = () => {
     return (
       <Box className="relative px-5 py-2 w-full h-fit bg-[grey] flex flex-row items-center justify-between border-b-white border-b-4 ">
@@ -61,12 +70,6 @@ const Pesan = () => {
       </Box>
     );
   };
-  const actions = [
-    { icon: <FileCopyIcon />, name: "Copy" },
-    { icon: <SaveIcon />, name: "Save" },
-    { icon: <PrintIcon />, name: "Print" },
-    { icon: <ShareIcon />, name: "Share" },
-  ];
   return (
     <Box className="m-5 flex flex-col">
       {/* Title */}
@@ -88,110 +91,7 @@ const Pesan = () => {
           <Mail />
           <Mail />
         </Box>
-        <Box className=" justify-between overflow-y-auto col-span-8 row-span-5 bg-primary5 flex flex-col items-center rounded-3xl scrollbar-hide">
-          <Box className="w-full h-full">
-            <MainContainer>
-              <ChatContainer>
-                <ConversationHeader className="h-24">
-                  <ConversationHeader.Content />
-                  <Avatar
-                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                    name="Adit"
-                    size="lg"
-                    status="invisible"
-                  />
-                  <ConversationHeader.Content
-                    className="ml-6"
-                    userName="Adit"
-                    info="Active 10 mins ago"
-                  />
-                  <ConversationHeader.Actions>
-                    <StarButton title="Add to favourites" />
-                    <InfoButton title="Show info" />
-                  </ConversationHeader.Actions>
-                </ConversationHeader>
-                <MessageList className="p-4">
-                  <Message
-                    model={{
-                      message: "Hello my friend",
-                      sentTime: "just now",
-                      direction: "incoming",
-                      sender: "Adit",
-                    }}
-                  />
-                  <Message
-                    model={{
-                      message: "Care to chat with me?",
-                      sentTime: "just now",
-                      direction: "incoming",
-                      sender: "Adit",
-                    }}
-                  />
-                  <Message
-                    model={{
-                      message: "Go Fuck Yourself, Adit!",
-                      sentTime: "just now",
-                      direction: "outgoing",
-                      sender: "me",
-                    }}
-                  />
-                  <Message
-                    model={{
-                      message: "How rude :((... i would if i could you bitch.",
-                      sentTime: "just now",
-                      direction: "ingoing",
-                      sender: "Adit",
-                    }}
-                  />
-                </MessageList>
-                <MessageInput
-                  className="mx-8"
-                  placeholder="Type message here"
-                />
-              </ChatContainer>
-            </MainContainer>
-          </Box>
-          {/* <Box className="border-t-2 border-t-white border-t-solid relative flex flex-row justify-end w-full h-32 p-4 ">
-            <SpeedDial
-              ariaLabel="message-speeddial"
-              className="absolute bottom-[15%] left-[2.5%]"
-              // sx={{ position: "absolute", bottom: 24, left: 24 }}
-              sx={{
-                "& .MuiFab-primary": {
-                  width: 90,
-                  height: 90,
-                  // flex: true,
-                  paddingBottom: 3,
-                  // textAlign: "center",
-                  "& .MuiSpeedDialIcon-icon": {
-                    fontSize: 50,
-                  },
-                },
-              }}
-              icon={<SpeedDialIcon />}
-            >
-              {actions.map((action) => (
-                <SpeedDialAction
-                  key={action.name}
-                  icon={action.icon}
-                  tooltipTitle={action.name}
-                />
-              ))}
-            </SpeedDial>
-            <TextField
-              id="text-message"
-              multiline
-              rows={4}
-              placeholder="ketik Pesan Anda"
-              className="w-[65%] h-full bg-primary5 rounded-t-3xl"
-              variant="standard"
-            />
-            <Box className="flex flex-row gap-4 text-xl w-[20%] border-solid border-[1px] border-white justify-center items-center text-white rounded-3xl m-4 duration-300 cursor-pointer hover:bg-primary4">
-              <FiSend size={40} color="white" />
-              Send
-            </Box>
-          </Box> */}
-        </Box>
+        <ChatBox />
       </Box>
     </Box>
   );

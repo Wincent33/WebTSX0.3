@@ -1,0 +1,34 @@
+.cs-conversation-header__user-name {
+  background-color: transparent !important;
+  color: white !important;
+}
+.cs-conversation-header__info {
+  background-color: transparent !important;
+  color: white !important;
+}
+.cs-message-list {
+  background-color: #98c1d9 !important;
+}
+.cs-message-input {
+  background-color: transparent !important;
+  color: white !important;
+}
+.cs-message--incoming .cs-message__content {
+  background-color: #293241 !important;
+  color: white !important;
+  border-radius: 0 0.7em 0.7em 0.7em;
+}
+.cs-message--outgoing .cs-message__content {
+  background-color: #ee6c4d !important;
+  color: white !important;
+  border-radius: 0.7em 0.7em 0 0.7em;
+}
+.cs-chat-container {
+  background-color: #293241 !important;
+}
+.cs-message-input__content-editor-wrapper {
+  background-color: white;
+}
+.cs-message-input__content-editor {
+  background-color: white;
+}
