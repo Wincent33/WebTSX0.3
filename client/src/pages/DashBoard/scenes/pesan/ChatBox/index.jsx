@@ -23,7 +23,7 @@ const ChatBox = () => {
   };
 
   return (
-    <Box className="justify-between overflow-y-auto col-span-8 row-span-5 bg-primary5 flex flex-col rounded-3xl scrollbar-hide">
+    <Box className="justify-between overflow-y-auto col-span-8 row-span-4 bg-primary5 flex flex-col rounded-3xl scrollbar-hide">
       {/*Header / Top*/}
       <div className="p-5 flex flex-row justify-between h-20 w-full bg-primary5 text-white">
         {/* Avatar and Top Info*/}
